@@ -16,7 +16,7 @@ export default function Testimonials() {
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.12}>
-              <figure className="flex h-full flex-col rounded-2xl bg-white p-8 shadow-soft">
+              <figure className="flex h-full flex-col rounded-2xl border border-forest/5 bg-white p-8 shadow-soft transition-all duration-500 ease-smooth hover:-translate-y-1 hover:shadow-card">
                 <Quote
                   size={32}
                   className="text-leaf/30"

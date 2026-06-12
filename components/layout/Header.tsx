@@ -36,7 +36,12 @@ export default function Header() {
           : "bg-transparent",
       )}
     >
-      <div className="container-content flex h-20 items-center justify-between">
+      <div
+        className={cn(
+          "container-content flex items-center justify-between transition-all duration-500 ease-smooth",
+          scrolled ? "h-16" : "h-20",
+        )}
+      >
         <Link
           href="/"
           className="relative z-10 flex items-center"
@@ -50,7 +55,8 @@ export default function Header() {
             height={276}
             priority
             className={cn(
-              "h-11 w-auto transition-all duration-300 sm:h-12",
+              "w-auto transition-all duration-500 ease-smooth",
+              scrolled || open ? "h-9 sm:h-10" : "h-11 sm:h-12",
               !scrolled && !open
                 ? "brightness-0 invert drop-shadow-md"
                 : "drop-shadow-none",

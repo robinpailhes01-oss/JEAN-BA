@@ -28,13 +28,28 @@ export default function SectionTitle({
     >
       {eyebrow && (
         <Reveal>
-          <p className={cn("eyebrow", light && "text-leaf-light")}>{eyebrow}</p>
+          <p
+            className={cn(
+              "eyebrow flex items-center gap-2.5",
+              align === "center" && "justify-center",
+              light && "text-leaf-light",
+            )}
+          >
+            <span
+              aria-hidden
+              className={cn(
+                "h-px w-7",
+                light ? "bg-leaf-light/60" : "bg-leaf-dark/50",
+              )}
+            />
+            {eyebrow}
+          </p>
         </Reveal>
       )}
       <Reveal delay={0.08}>
         <h2
           className={cn(
-            "mt-3 text-3xl leading-tight sm:text-4xl lg:text-[2.75rem]",
+            "mt-4 text-3xl font-medium leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl",
             light ? "text-white" : "text-forest",
           )}
         >

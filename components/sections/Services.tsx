@@ -17,7 +17,7 @@ export default function Services() {
         <div className="mt-16 grid gap-7 md:grid-cols-3">
           {SERVICES.map((service, i) => (
             <Reveal key={service.slug} delay={i * 0.12}>
-              <article className="group h-full overflow-hidden rounded-2xl bg-white shadow-soft transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:shadow-card">
+              <article className="group h-full overflow-hidden rounded-2xl border border-forest/5 bg-white shadow-soft transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:shadow-card">
                 <div className="relative h-56 overflow-hidden">
                   <Image
                     src={service.image}

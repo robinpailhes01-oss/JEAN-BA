@@ -27,7 +27,7 @@ export default function Footer() {
               aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-colors hover:border-leaf hover:bg-leaf hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-all duration-300 ease-smooth hover:scale-110 hover:border-leaf hover:bg-leaf hover:text-white"
             >
               <Instagram size={18} />
             </a>
@@ -36,7 +36,7 @@ export default function Footer() {
               aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-colors hover:border-leaf hover:bg-leaf hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-all duration-300 ease-smooth hover:scale-110 hover:border-leaf hover:bg-leaf hover:text-white"
             >
               <Facebook size={18} />
             </a>
@@ -45,7 +45,7 @@ export default function Footer() {
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-colors hover:border-leaf hover:bg-leaf hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-all duration-300 ease-smooth hover:scale-110 hover:border-leaf hover:bg-leaf hover:text-white"
             >
               <Linkedin size={18} />
             </a>

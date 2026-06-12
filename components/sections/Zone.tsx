@@ -20,7 +20,7 @@ export default function Zone() {
             <p className="eyebrow text-leaf-light">Zone d&apos;intervention</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mt-3 text-3xl leading-tight sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-medium leading-[1.08] tracking-tight sm:text-4xl lg:text-[2.75rem]">
               À {SITE.city} et dans tout le {SITE.department}
             </h2>
           </Reveal>

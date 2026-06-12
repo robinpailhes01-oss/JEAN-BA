@@ -54,7 +54,7 @@ export default function About() {
             <p className="eyebrow">À propos</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mt-3 text-3xl leading-tight text-forest sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-medium leading-[1.08] tracking-tight text-forest sm:text-4xl lg:text-[2.75rem]">
               Un artisan paysagiste passionné, près de chez vous
             </h2>
           </Reveal>

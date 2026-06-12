@@ -4,18 +4,18 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "outline" | "ghost" | "light";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-smooth hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0";
 
 const variants: Record<Variant, string> = {
   // CTA principal — Vert Feuille de la charte
   primary:
-    "bg-leaf text-white shadow-soft hover:bg-leaf-dark hover:-translate-y-0.5 hover:shadow-card",
+    "bg-leaf text-white shadow-soft hover:bg-leaf-dark hover:shadow-card",
   outline:
-    "border border-white/70 text-white hover:bg-white hover:text-forest",
+    "border border-white/70 text-white hover:border-white hover:bg-white hover:text-forest",
   ghost:
     "border border-forest/20 text-forest hover:border-forest hover:bg-forest hover:text-white",
   light:
-    "bg-white text-forest shadow-soft hover:-translate-y-0.5 hover:shadow-card",
+    "bg-white text-forest shadow-soft hover:shadow-card",
 };
 
 type CommonProps = {

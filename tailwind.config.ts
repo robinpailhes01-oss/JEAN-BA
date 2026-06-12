@@ -37,8 +37,9 @@ const config: Config = {
         content: "1200px",
       },
       boxShadow: {
-        soft: "0 10px 40px -12px rgba(45, 80, 22, 0.18)",
-        card: "0 8px 30px -10px rgba(45, 80, 22, 0.22)",
+        // Écart marqué soft → card pour que le "lift" au survol se sente
+        soft: "0 10px 40px -12px rgba(45, 80, 22, 0.16)",
+        card: "0 22px 55px -14px rgba(45, 80, 22, 0.32)",
       },
       transitionTimingFunction: {
         // Easing "luxe" — lent et subtil
@@ -49,9 +50,21 @@ const config: Config = {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        "rise-in": {
+          from: { opacity: "0", transform: "translateY(18px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(8px)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.8s ease forwards",
+        // Entrée échelonnée CSS (en-têtes de page) — pas de JS, donc gratuit en bundle
+        "rise-in": "rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
+        // Indicateur de scroll feutré (remplace animate-bounce générique)
+        float: "float 2.4s cubic-bezier(0.45, 0, 0.55, 1) infinite",
       },
     },
   },

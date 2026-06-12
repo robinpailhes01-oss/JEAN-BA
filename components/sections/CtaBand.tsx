@@ -21,7 +21,7 @@ export default function CtaBand() {
 
       <div className="container-content py-24 text-center text-white lg:py-28">
         <Reveal>
-          <h2 className="mx-auto max-w-2xl text-3xl leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mx-auto max-w-2xl text-3xl font-medium leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl">
             Un projet de jardin&nbsp;? Parlons-en.
           </h2>
         </Reveal>

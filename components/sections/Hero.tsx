@@ -34,10 +34,10 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover"
         />
-        {/* Overlay vert forêt pour faire ressortir le texte et habiller la marque */}
+        {/* Overlay vert forêt — allégé pour laisser respirer la photo (le jardin = le produit) */}
         <motion.div
           style={{ opacity: overlayOpacity }}
-          className="absolute inset-0 bg-gradient-to-b from-forest-dark/70 via-forest-dark/40 to-forest-dark/80"
+          className="absolute inset-0 bg-gradient-to-b from-forest-dark/55 via-forest-dark/30 to-forest-dark/65"
         />
       </motion.div>
 
@@ -58,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 max-w-4xl text-4xl leading-[1.1] drop-shadow-md sm:text-6xl lg:text-7xl"
+          className="mt-5 max-w-4xl text-4xl font-medium leading-[1.05] tracking-[-0.02em] drop-shadow-md sm:text-6xl lg:text-7xl"
         >
           {SITE.tagline}
         </motion.h1>
@@ -95,7 +95,7 @@ export default function Hero() {
         transition={{ delay: 1.2, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80"
       >
-        <ChevronDown className="animate-bounce" size={28} />
+        <ChevronDown className="animate-float" size={28} aria-hidden />
       </motion.div>
     </section>
   );
