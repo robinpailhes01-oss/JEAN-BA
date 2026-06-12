@@ -1,0 +1,63 @@
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+type Variant = "primary" | "outline" | "ghost" | "light";
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:cursor-not-allowed disabled:opacity-60";
+
+const variants: Record<Variant, string> = {
+  // CTA principal — Vert Feuille de la charte
+  primary:
+    "bg-leaf text-white shadow-soft hover:bg-leaf-dark hover:-translate-y-0.5 hover:shadow-card",
+  outline:
+    "border border-white/70 text-white hover:bg-white hover:text-forest",
+  ghost:
+    "border border-forest/20 text-forest hover:border-forest hover:bg-forest hover:text-white",
+  light:
+    "bg-white text-forest shadow-soft hover:-translate-y-0.5 hover:shadow-card",
+};
+
+type CommonProps = {
+  variant?: Variant;
+  className?: string;
+  children: React.ReactNode;
+};
+
+type ButtonAsLink = CommonProps & {
+  href: string;
+} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "className">;
+
+type ButtonAsButton = CommonProps & {
+  href?: undefined;
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className">;
+
+export default function Button(props: ButtonAsLink | ButtonAsButton) {
+  const { variant = "primary", className, children } = props;
+  const classes = cn(base, variants[variant], className);
+
+  if (props.href !== undefined) {
+    const { href, variant: _v, className: _c, children: _ch, ...rest } = props;
+    const isExternal = href.startsWith("http") || href.startsWith("tel:");
+    if (isExternal) {
+      return (
+        <a href={href} className={classes} {...rest}>
+          {children}
+        </a>
+      );
+    }
+    return (
+      <Link href={href} className={classes} {...rest}>
+        {children}
+      </Link>
+    );
+  }
+
+  const { variant: _v, className: _c, children: _ch, href: _h, ...rest } =
+    props;
+  return (
+    <button className={classes} {...rest}>
+      {children}
+    </button>
+  );
+}
