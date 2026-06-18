@@ -49,17 +49,14 @@ export default function Header() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/images/brand/logo-signature.png"
+            src="/images/brand/logo-icon.png"
             alt={SITE.name}
-            width={723}
-            height={276}
+            width={300}
+            height={300}
             priority
             className={cn(
               "w-auto transition-all duration-500 ease-smooth",
-              scrolled || open ? "h-9 sm:h-10" : "h-11 sm:h-12",
-              !scrolled && !open
-                ? "brightness-0 invert drop-shadow-md"
-                : "drop-shadow-none",
+              scrolled || open ? "h-10 sm:h-11" : "h-12 sm:h-13",
             )}
           />
         </Link>

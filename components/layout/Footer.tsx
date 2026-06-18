@@ -12,11 +12,11 @@ export default function Footer() {
         {/* Marque */}
         <div className="lg:col-span-1">
           <Image
-            src="/images/brand/logo-signature.png"
+            src="/images/brand/logo-icon.png"
             alt={SITE.name}
-            width={723}
-            height={276}
-            className="h-12 w-auto brightness-0 invert"
+            width={300}
+            height={300}
+            className="h-12 w-auto"
           />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/70">
             {SITE.tagline}. Paysagiste à {SITE.city} et dans tout le {SITE.department}.
