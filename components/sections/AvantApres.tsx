@@ -4,14 +4,25 @@ import BeforeAfter from "@/components/ui/BeforeAfter";
 
 const PAIRS = [
   {
-    title: "Taille d'oliviers en nuage",
+    title: "Taille d'olivier en nuage",
     before: {
-      src: "/images/realisations/olivier-taille-avant.jpg",
-      alt: "Olivier avant la taille",
+      src: "/images/realisations/olivier-nuage-avant.jpg",
+      alt: "Olivier touffu avant la taille en nuage",
     },
     after: {
-      src: "/images/realisations/olivier-taille-apres.jpg",
+      src: "/images/realisations/olivier-nuage-apres.jpg",
       alt: "Olivier après une taille en nuage soignée",
+    },
+  },
+  {
+    title: "Création de plage de piscine",
+    before: {
+      src: "/images/realisations/piscine-avant.jpg",
+      alt: "Contour de piscine avant aménagement",
+    },
+    after: {
+      src: "/images/realisations/piscine-apres.jpg",
+      alt: "Plage de piscine carrelée après aménagement",
     },
   },
   {
@@ -47,7 +58,7 @@ export default function AvantApres() {
           description="Glissez le curseur sur chaque photo pour découvrir le travail réalisé sur les extérieurs de nos clients dans le Gard."
         />
 
-        <div className="mx-auto mt-16 grid max-w-3xl gap-8 sm:grid-cols-2">
+        <div className="mx-auto mt-16 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {PAIRS.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.1}>
               <figure>
