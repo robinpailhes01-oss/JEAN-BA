@@ -28,6 +28,7 @@ export default function Header() {
   }, [open]);
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-smooth",
@@ -95,11 +96,15 @@ export default function Header() {
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
+      </header>
 
-      {/* Panneau mobile */}
+      {/* Panneau mobile — HORS du <header> : un ancêtre avec backdrop-blur
+          devient le bloc conteneur des enfants fixed, ce qui confinait le
+          panneau à la barre du header. z-[45] : au-dessus de la barre du bas
+          (z-40), sous le header (z-50) pour garder la croix cliquable. */}
       <div
         className={cn(
-          "fixed inset-0 z-0 flex flex-col bg-cream px-6 pt-24 pb-10 transition-all duration-400 ease-smooth lg:hidden",
+          "fixed inset-0 z-[45] flex flex-col bg-cream px-6 pt-24 pb-10 transition-opacity duration-400 ease-smooth lg:hidden",
           open
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0",
@@ -131,6 +136,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }
