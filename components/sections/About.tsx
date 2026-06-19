@@ -31,8 +31,8 @@ export default function About() {
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card">
               <Image
-                src="/images/about.jpg"
-                alt={`${SITE.legalName}, paysagiste passionné à ${SITE.city}`}
+                src="/images/camion-jean-ba.jpg"
+                alt={`Le véhicule ${SITE.name} en intervention dans un jardin à ${SITE.city}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
