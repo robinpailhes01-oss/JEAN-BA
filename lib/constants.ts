@@ -134,74 +134,48 @@ export type Realisation = {
   span?: "tall" | "wide" | "normal";
 };
 
-/**
- * ⚠️ PHOTOS TEMPORAIRES libres de droits (Unsplash) — à remplacer par les
- * vraies réalisations de Jean Ba. Il suffit de garder les mêmes noms de
- * fichiers dans /public/images/realisations pour un remplacement 1-pour-1.
- */
 export const REALISATIONS: Realisation[] = [
   {
-    src: "/images/realisations/01-piscine.jpg",
-    alt: "Aménagement paysager autour d'une piscine à Nîmes",
-    title: "Jardin & piscine méditerranéens",
+    src: "/images/realisations/olivier-nuage-apres.jpg",
+    alt: "Olivier taillé en nuage dans un jardin du Gard",
+    title: "Taille d'olivier en nuage",
+    category: "Entretien",
+    span: "wide",
+  },
+  {
+    src: "/images/realisations/piscine-apres.jpg",
+    alt: "Plage de piscine carrelée aménagée à Nîmes",
+    title: "Plage de piscine carrelée",
     category: "Piscine & Bassin",
-    span: "wide",
-  },
-  {
-    src: "/images/realisations/03-allee-glycine.jpg",
-    alt: "Allée fleurie sous une glycine dans un jardin du Gard",
-    title: "Allée sous glycine",
-    category: "Création de jardin",
     span: "tall",
   },
   {
-    src: "/images/realisations/02-terrasse.jpg",
-    alt: "Terrasse extérieure aménagée avec espace détente",
-    title: "Terrasse & espace détente",
-    category: "Terrasse",
-    span: "normal",
-  },
-  {
-    src: "/images/realisations/04-jardin-paysager.jpg",
-    alt: "Jardin paysager arboré et fleuri",
-    title: "Jardin paysager arboré",
-    category: "Création de jardin",
-    span: "tall",
-  },
-  {
-    src: "/images/realisations/05-parc-demeure.jpg",
-    alt: "Parc et jardin d'une demeure de caractère",
-    title: "Parc d'une demeure",
-    category: "Création de jardin",
-    span: "wide",
-  },
-  {
-    src: "/images/realisations/06-massifs.jpg",
-    alt: "Massifs fleuris entretenus dans un jardin méditerranéen",
-    title: "Massifs fleuris",
+    src: "/images/realisations/jardin-apres.jpg",
+    alt: "Pelouse et jardin remis en état dans le Gard",
+    title: "Remise en état de jardin",
     category: "Entretien",
     span: "normal",
   },
   {
-    src: "/images/realisations/07-allee-arboree.jpg",
-    alt: "Allée arborée menant à une maison",
-    title: "Allée arborée",
+    src: "/images/realisations/olivier-nuage-avant.jpg",
+    alt: "Olivier avant taille, jardinage dans le Gard",
+    title: "Élagage & taille d'arbres",
+    category: "Entretien",
+    span: "tall",
+  },
+  {
+    src: "/images/camion-jean-ba.jpg",
+    alt: "Camion Jean Ba Paysagiste en intervention dans le Gard",
+    title: "Jean Ba en intervention",
     category: "Création de jardin",
     span: "wide",
   },
   {
-    src: "/images/realisations/08-potager.jpg",
-    alt: "Jardin potager structuré et dessiné",
-    title: "Potager dessiné",
-    category: "Création de jardin",
-    span: "normal",
-  },
-  {
-    src: "/images/realisations/09-espace-vert.jpg",
-    alt: "Espace vert entretenu avec arbustes et pelouse",
-    title: "Espace vert paysager",
+    src: "/images/realisations/jardin-avant.jpg",
+    alt: "Grand jardin avec olivier centenaire dans le Gard",
+    title: "Entretien de grand jardin",
     category: "Entretien",
-    span: "tall",
+    span: "normal",
   },
 ];
 

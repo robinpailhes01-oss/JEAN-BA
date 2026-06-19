@@ -37,6 +37,7 @@ export default function BeforeAfter({ before, after, className }: Props) {
         "group relative aspect-[3/4] w-full cursor-ew-resize select-none overflow-hidden rounded-2xl shadow-card",
         className,
       )}
+      onDragStart={(e) => e.preventDefault()}
       onPointerDown={(e) => {
         dragging.current = true;
         e.currentTarget.setPointerCapture?.(e.pointerId);
@@ -52,13 +53,14 @@ export default function BeforeAfter({ before, after, className }: Props) {
         dragging.current = false;
       }}
     >
-      {/* APRÈS — image de fond */}
+      {/* APRÈS — image de fond, pointer-events-none pour ne pas capturer le drag */}
       <Image
         src={after.src}
         alt={after.alt}
         fill
+        draggable={false}
         sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover"
+        className="pointer-events-none object-cover"
       />
 
       {/* AVANT — révélée de la gauche jusqu'au curseur */}
@@ -70,8 +72,9 @@ export default function BeforeAfter({ before, after, className }: Props) {
           src={before.src}
           alt={before.alt}
           fill
+          draggable={false}
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover"
+          className="pointer-events-none object-cover"
         />
       </div>
 

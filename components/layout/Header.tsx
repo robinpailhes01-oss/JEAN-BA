@@ -54,9 +54,10 @@ export default function Header() {
             width={300}
             height={300}
             priority
+            quality={100}
             className={cn(
               "w-auto transition-all duration-500 ease-smooth",
-              scrolled || open ? "h-10 sm:h-11" : "h-12 sm:h-13",
+              scrolled || open ? "h-10 sm:h-11" : "h-12 sm:h-14",
             )}
           />
         </Link>
