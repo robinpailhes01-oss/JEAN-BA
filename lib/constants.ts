@@ -61,7 +61,6 @@ export type Service = {
   title: string;
   short: string;
   description: string;
-  image: string;
   features: string[];
 };
 
@@ -72,7 +71,6 @@ export const SERVICES: Service[] = [
     short: "Le plan de votre futur jardin",
     description:
       "Nous dessinons votre projet sur mesure : étude du terrain, plan d'aménagement, choix des végétaux adaptés au climat méditerranéen et mise en perspective 3D.",
-    image: "/images/services/conception.jpg",
     features: [
       "Étude et analyse du terrain",
       "Plan d'aménagement personnalisé",
@@ -86,7 +84,6 @@ export const SERVICES: Service[] = [
     short: "Nous donnons vie à votre jardin",
     description:
       "De la plantation aux ouvrages paysagers, nous réalisons l'intégralité de votre aménagement extérieur : massifs, allées, terrasses, gazon, arrosage automatique et bien plus.",
-    image: "/images/services/creation.jpg",
     features: [
       "Création de massifs et plantations",
       "Terrasses, allées & pas japonais",
@@ -100,7 +97,6 @@ export const SERVICES: Service[] = [
     short: "Un jardin beau toute l'année",
     description:
       "Contrats d'entretien annuels ou interventions ponctuelles : taille, tonte, élagage, désherbage et soin des végétaux pour préserver la beauté de votre extérieur.",
-    image: "/images/services/entretien.jpg",
     features: [
       "Taille et élagage raisonnés",
       "Tonte et entretien des gazons",

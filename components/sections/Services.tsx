@@ -1,8 +1,14 @@
-import Image from "next/image";
-import { Check } from "lucide-react";
+import { Check, PencilRuler, Sprout, Scissors } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/motion/Reveal";
+
+const ICONS: Record<string, LucideIcon> = {
+  conception: PencilRuler,
+  creation: Sprout,
+  entretien: Scissors,
+};
 
 export default function Services() {
   return (
@@ -15,30 +21,25 @@ export default function Services() {
         />
 
         <div className="mt-16 grid gap-7 md:grid-cols-3">
-          {SERVICES.map((service, i) => (
-            <Reveal key={service.slug} delay={i * 0.12}>
-              <article className="group h-full overflow-hidden rounded-2xl border border-forest/5 bg-white shadow-soft transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:shadow-card">
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/40 to-transparent" />
-                  <h3 className="absolute bottom-4 left-5 font-display text-2xl text-white drop-shadow">
+          {SERVICES.map((service, i) => {
+            const Icon = ICONS[service.slug] ?? Sprout;
+            return (
+              <Reveal key={service.slug} delay={i * 0.12}>
+                <article className="group flex h-full flex-col rounded-2xl border border-forest/5 bg-white p-8 shadow-soft transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:shadow-card">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-leaf/12 text-leaf-dark transition-colors duration-500 ease-smooth group-hover:bg-leaf group-hover:text-white">
+                    <Icon size={30} strokeWidth={1.5} />
+                  </span>
+
+                  <h3 className="mt-6 font-display text-2xl text-forest">
                     {service.title}
                   </h3>
-                </div>
-
-                <div className="flex flex-col p-7">
-                  <p className="font-display text-lg text-forest">
+                  <p className="mt-2 font-display text-lg text-leaf-dark">
                     {service.short}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-forest-dark/70">
                     {service.description}
                   </p>
+
                   <ul className="mt-6 space-y-2.5">
                     {service.features.map((f) => (
                       <li
@@ -52,10 +53,10 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
