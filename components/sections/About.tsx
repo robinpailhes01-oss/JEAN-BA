@@ -8,7 +8,7 @@ const VALUES = [
   {
     icon: Leaf,
     title: "Savoir-faire local",
-    text: "Une parfaite connaissance des végétaux et du climat méditerranéen du Gard.",
+    text: "Une parfaite connaissance des végétaux et du climat du Gard.",
   },
   {
     icon: Award,
@@ -65,7 +65,7 @@ export default function About() {
                 passion du végétal au service de vos projets d&apos;extérieur.
                 De la petite terrasse au grand jardin, chaque réalisation est
                 pensée comme un lieu de vie unique, en harmonie avec son
-                environnement méditerranéen.
+                environnement.
               </p>
               <p>
                 Conception, création, entretien&nbsp;: un accompagnement complet
