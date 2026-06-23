@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Leaf, Award, HeartHandshake } from "lucide-react";
-import { SITE } from "@/lib/constants";
+import { SITE, STATS } from "@/lib/constants";
 import Reveal from "@/components/motion/Reveal";
+import Parallax from "@/components/motion/Parallax";
 import Button from "@/components/ui/Button";
+import CountUp from "@/components/ui/CountUp";
 
 const VALUES = [
   {
@@ -26,17 +28,20 @@ export default function About() {
   return (
     <section id="a-propos" className="bg-cream py-24 lg:py-32">
       <div className="container-content grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-        {/* Image */}
+        {/* Image avec parallax */}
         <Reveal direction="right">
           <div className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card">
-              <Image
-                src="/images/camion-jean-ba.jpg"
-                alt={`Le véhicule ${SITE.name} en intervention dans un jardin à ${SITE.city}`}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
+              <Parallax amount={36} className="absolute inset-x-0 -top-[10%] h-[120%]">
+                <Image
+                  src="/images/camion-jean-ba.jpg"
+                  alt={`Le véhicule ${SITE.name} en intervention dans un jardin à ${SITE.city}`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </Parallax>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest-dark/20 to-transparent" />
             </div>
             {/* Bloc accent superposé */}
             <div className="absolute -bottom-6 -right-4 hidden rounded-2xl bg-forest px-7 py-6 text-cream shadow-card sm:block">
@@ -101,6 +106,24 @@ export default function About() {
             </div>
           </Reveal>
         </div>
+      </div>
+
+      {/* Chiffres clés — compteurs animés */}
+      <div className="container-content mt-20 lg:mt-28">
+        <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-forest/5 bg-forest/5 text-center shadow-soft lg:grid-cols-4">
+          {STATS.map((s, i) => (
+            <Reveal as="div" key={s.label} delay={i * 0.08}>
+              <div className="flex h-full flex-col items-center justify-center bg-cream px-4 py-9">
+                <dd className="font-display text-4xl font-medium text-forest sm:text-5xl">
+                  <CountUp value={s.value} suffix={s.suffix} />
+                </dd>
+                <dt className="mt-2 text-xs font-semibold uppercase tracking-widest2 text-forest-dark/55">
+                  {s.label}
+                </dt>
+              </div>
+            </Reveal>
+          ))}
+        </dl>
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ const PAIRS = [
 
 export default function AvantApres() {
   return (
-    <section className="relative overflow-hidden bg-forest py-24 text-cream lg:py-32">
+    <section className="grain relative overflow-hidden bg-forest py-24 text-cream lg:py-32">
       {/* Motif décoratif subtil */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -50,6 +50,9 @@ export default function AvantApres() {
           backgroundSize: "32px 32px",
         }}
       />
+      {/* Halos lumineux */}
+      <div className="pointer-events-none absolute -right-20 top-0 h-80 w-80 rounded-full bg-leaf/15 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-leaf/10 blur-[120px]" />
       <div className="container-content relative">
         <SectionTitle
           light

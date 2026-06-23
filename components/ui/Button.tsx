@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "outline" | "ghost" | "light";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-smooth hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0";
+  "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-smooth hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 before:pointer-events-none before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:transition-transform before:duration-[850ms] before:ease-out hover:before:translate-x-full motion-reduce:before:hidden";
 
 const variants: Record<Variant, string> = {
   // CTA principal — Vert Feuille de la charte
@@ -35,6 +35,12 @@ type ButtonAsButton = CommonProps & {
 export default function Button(props: ButtonAsLink | ButtonAsButton) {
   const { variant = "primary", className, children } = props;
   const classes = cn(base, variants[variant], className);
+  // Le contenu reste au-dessus du reflet (sheen) qui balaie le bouton
+  const content = (
+    <span className="relative z-10 inline-flex items-center gap-2">
+      {children}
+    </span>
+  );
 
   if (props.href !== undefined) {
     const { href, variant: _v, className: _c, children: _ch, ...rest } = props;
@@ -42,13 +48,13 @@ export default function Button(props: ButtonAsLink | ButtonAsButton) {
     if (isExternal) {
       return (
         <a href={href} className={classes} {...rest}>
-          {children}
+          {content}
         </a>
       );
     }
     return (
       <Link href={href} className={classes} {...rest}>
-        {children}
+        {content}
       </Link>
     );
   }
@@ -57,7 +63,7 @@ export default function Button(props: ButtonAsLink | ButtonAsButton) {
     props;
   return (
     <button className={classes} {...rest}>
-      {children}
+      {content}
     </button>
   );
 }

@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
 import { localBusinessJsonLd } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileCta from "@/components/layout/MobileCta";
+import SmoothScroll from "@/components/providers/SmoothScroll";
+import ScrollReset from "@/components/providers/ScrollReset";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -89,9 +93,13 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessJsonLd()),
           }}
         />
-        <Header />
-        <main className="pb-16 lg:pb-0">{children}</main>
-        <Footer />
+        <ScrollProgress />
+        <SmoothScroll>
+          <ScrollReset />
+          <Header />
+          <main className="pb-16 lg:pb-0">{children}</main>
+          <Footer />
+        </SmoothScroll>
         <MobileCta />
       </body>
     </html>

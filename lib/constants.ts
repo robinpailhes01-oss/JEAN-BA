@@ -68,22 +68,22 @@ export const SERVICES: Service[] = [
   {
     slug: "conception",
     title: "Conception",
-    short: "Le plan de votre futur jardin",
+    short: "Imaginer votre futur extérieur",
     description:
-      "Nous dessinons votre projet sur mesure : étude du terrain, plan d'aménagement, choix des végétaux adaptés au climat méditerranéen et mise en perspective 3D.",
+      "Tout commence par une vision. Nous étudions votre terrain, son exposition et vos envies, puis traduisons le tout en un plan d'aménagement clair, jusqu'au choix des végétaux et des matières.",
     features: [
-      "Étude et analyse du terrain",
+      "Visite et analyse du terrain",
       "Plan d'aménagement personnalisé",
-      "Sélection des végétaux méditerranéens",
+      "Sélection raisonnée des végétaux",
       "Devis détaillé et transparent",
     ],
   },
   {
     slug: "creation",
     title: "Création",
-    short: "Nous donnons vie à votre jardin",
+    short: "Donner vie au projet",
     description:
-      "De la plantation aux ouvrages paysagers, nous réalisons l'intégralité de votre aménagement extérieur : massifs, allées, terrasses, gazon, arrosage automatique et bien plus.",
+      "De la première plantation aux ouvrages paysagers, nous façonnons l'intégralité de votre extérieur avec un soin d'artisan : massifs, allées, terrasses, gazon et arrosage automatique.",
     features: [
       "Création de massifs et plantations",
       "Terrasses, allées & pas japonais",
@@ -94,9 +94,9 @@ export const SERVICES: Service[] = [
   {
     slug: "entretien",
     title: "Entretien",
-    short: "Un jardin beau toute l'année",
+    short: "Préserver sa beauté, saison après saison",
     description:
-      "Contrats d'entretien annuels ou interventions ponctuelles : taille, tonte, élagage, désherbage et soin des végétaux pour préserver la beauté de votre extérieur.",
+      "Un beau jardin se cultive dans la durée. Contrats annuels ou interventions ponctuelles : taille, tonte, élagage et soin des végétaux pour garder un extérieur impeccable toute l'année.",
     features: [
       "Taille et élagage raisonnés",
       "Tonte et entretien des gazons",
@@ -104,6 +104,16 @@ export const SERVICES: Service[] = [
       "Contrats annuels sur mesure",
     ],
   },
+];
+
+/** Chiffres clés — affichés avec un compteur animé (preuve de sérieux). */
+export type Stat = { value: number; suffix?: string; label: string };
+
+export const STATS: Stat[] = [
+  { value: 15, suffix: "+", label: "Ans d'expérience" },
+  { value: 200, suffix: "+", label: "Jardins réalisés" },
+  { value: 16, suffix: "", label: "Communes desservies" },
+  { value: 48, suffix: " h", label: "Réponse à votre devis" },
 ];
 
 export type Category =

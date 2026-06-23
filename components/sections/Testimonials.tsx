@@ -13,31 +13,54 @@ export default function Testimonials() {
           description="La satisfaction de nos clients est notre plus belle récompense. Voici quelques retours sur nos réalisations dans le Gard."
         />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        {/* Note agrégée */}
+        <Reveal delay={0.1} className="mt-8 flex justify-center">
+          <div className="inline-flex items-center gap-3 rounded-full border border-forest/10 bg-white px-5 py-2.5 shadow-soft">
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, s) => (
+                <Star key={s} size={16} className="fill-leaf text-leaf" />
+              ))}
+            </div>
+            <span className="text-sm font-semibold text-forest">5,0 / 5</span>
+            <span className="text-sm text-forest-dark/60">
+              · clients satisfaits dans le Gard
+            </span>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.12}>
-              <figure className="flex h-full flex-col rounded-2xl border border-forest/5 bg-white p-8 shadow-soft transition-all duration-500 ease-smooth hover:-translate-y-1 hover:shadow-card">
+              <figure className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-forest/5 bg-white p-8 shadow-soft transition-all duration-500 ease-out-expo hover:-translate-y-1.5 hover:shadow-lift">
                 <Quote
-                  size={32}
-                  className="text-leaf/30"
+                  size={44}
+                  className="absolute -top-1 right-5 text-leaf/10 transition-colors duration-500 group-hover:text-leaf/20"
                   strokeWidth={1.5}
                   aria-hidden
                 />
-                <div className="mt-4 flex gap-0.5" aria-label={`${t.rating} étoiles sur 5`}>
+                <div
+                  className="flex gap-0.5"
+                  aria-label={`${t.rating} étoiles sur 5`}
+                >
                   {Array.from({ length: t.rating }).map((_, s) => (
-                    <Star
-                      key={s}
-                      size={16}
-                      className="fill-leaf text-leaf"
-                    />
+                    <Star key={s} size={16} className="fill-leaf text-leaf" />
                   ))}
                 </div>
-                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-forest-dark/80">
-                  “{t.text}”
+                <blockquote className="mt-5 flex-1 font-display text-lg leading-relaxed text-forest-dark/85">
+                  « {t.text} »
                 </blockquote>
-                <figcaption className="mt-6 border-t border-beige pt-4">
-                  <p className="font-display text-base text-forest">{t.name}</p>
-                  <p className="text-xs text-forest-dark/60">{t.city}</p>
+                <figcaption className="mt-6 flex items-center gap-3 border-t border-beige pt-5">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-leaf/15 font-display text-lg text-leaf-dark">
+                    {t.name.charAt(0)}
+                  </span>
+                  <span>
+                    <span className="block font-display text-base text-forest">
+                      {t.name}
+                    </span>
+                    <span className="block text-xs text-forest-dark/60">
+                      {t.city}
+                    </span>
+                  </span>
                 </figcaption>
               </figure>
             </Reveal>

@@ -22,12 +22,6 @@ export default function RealisationsPage() {
       <section className="bg-cream py-20 lg:py-24">
         <div className="container-content">
           <Gallery />
-
-          {/* Note temporaire — à retirer quand les vraies photos seront en ligne */}
-          <p className="mt-14 text-center text-xs text-forest-dark/40">
-            Photos d&apos;illustration. Nos réalisations photographiées sont
-            ajoutées au fil de nos chantiers.
-          </p>
         </div>
       </section>
 

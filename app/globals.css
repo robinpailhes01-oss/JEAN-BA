@@ -9,13 +9,20 @@
   }
 
   html {
+    /* Lenis pilote le défilement fluide ; pas de scroll-behavior natif qui
+       entrerait en conflit. scroll-padding sert au fallback reduced-motion. */
+    scroll-padding-top: 6rem;
+  }
+
+  /* Sans Lenis (préférence reduced-motion), on garde un défilement doux natif */
+  html.lenis-fallback {
     scroll-behavior: smooth;
-    /* Compense le header fixe lors des ancres (#services...) */
-    scroll-padding-top: 5rem;
   }
 
   body {
     @apply bg-cream text-forest-dark font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   h1,
@@ -23,10 +30,31 @@
   h3,
   h4 {
     @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
     @apply bg-leaf/30 text-forest-dark;
+  }
+
+  /* Barre de défilement discrète aux couleurs de la marque */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f0e9da;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c9bd9c;
+    border-radius: 9999px;
+    border: 2px solid #f0e9da;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6ba033;
   }
 }
 
@@ -42,6 +70,44 @@
 
   .link-underline {
     @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-smooth hover:after:w-full;
+  }
+
+  /* Texte en dégradé de verts — accents typographiques */
+  .text-gradient-leaf {
+    @apply bg-gradient-to-r from-leaf-light via-leaf to-leaf-light bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Grain de film très fin — pose une texture organique sur les aplats et
+     photos, casse le rendu "plat" et donne le cachet d'un site soigné. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  /* Masque de fondu en bas (révèle progressivement) */
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
   }
 }
 

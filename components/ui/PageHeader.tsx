@@ -11,8 +11,18 @@ type Props = {
  */
 export default function PageHeader({ eyebrow, title, description }: Props) {
   return (
-    <section className="bg-forest pt-32 pb-16 text-center text-cream lg:pt-40 lg:pb-20">
-      <div className="container-content">
+    <section className="grain relative overflow-hidden bg-forest pt-32 pb-16 text-center text-cream lg:pt-40 lg:pb-20">
+      {/* Motif + halo */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, #FAF6EF 1px, transparent 0)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-leaf/15 blur-[130px]" />
+      <div className="container-content relative">
         {eyebrow && (
           <p
             className="eyebrow flex animate-rise-in items-center justify-center gap-2.5 text-leaf-light"

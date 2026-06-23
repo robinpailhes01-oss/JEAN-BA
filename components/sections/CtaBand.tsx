@@ -3,20 +3,23 @@ import { Phone } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/motion/Reveal";
+import Parallax from "@/components/motion/Parallax";
 
 export default function CtaBand() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="grain relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/cta-band.jpg"
-          alt=""
-          aria-hidden
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-forest-dark/80" />
+        <Parallax amount={50} className="absolute inset-x-0 -top-[12%] h-[124%]">
+          <Image
+            src="/images/cta-band.jpg"
+            alt=""
+            aria-hidden
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </Parallax>
+        <div className="absolute inset-0 bg-gradient-to-br from-forest-dark/90 via-forest-dark/80 to-forest/85" />
       </div>
 
       <div className="container-content py-24 text-center text-white lg:py-28">
