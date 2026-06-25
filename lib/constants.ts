@@ -161,6 +161,13 @@ export const REALISATIONS: Realisation[] = [
     span: "wide",
   },
   {
+    src: "/images/realisations/marina-cour-apres.jpg",
+    alt: "Cour couverte pavée de 65 m² aménagée par Jean Ba dans le Gard",
+    title: "Pavage de cour couverte",
+    category: "Terrasse",
+    span: "tall",
+  },
+  {
     src: "/images/realisations/olivier-nuage-apres.jpg",
     alt: "Olivier taillé en nuage dans un jardin du Gard",
     title: "Taille d'olivier en nuage",
@@ -235,25 +242,19 @@ export const FEATURED_TESTIMONIAL = {
   ],
 } as const;
 
-/** ⚠️ TÉMOIGNAGES TYPES — à remplacer par de vrais avis clients. */
+/** Avis clients réels (Google). */
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Claire M.",
-    city: "Nîmes",
+    name: "Marina",
+    city: "Mars 2025",
     rating: 5,
-    text: "Jean a transformé notre jardin en un véritable havre de paix. Travail soigné, conseils avisés et délais respectés. Nous recommandons sans hésiter.",
+    text: "Jean Ba s'occupe de l'entretien de mon grand jardin, c'est parfait. Dernièrement, j'ai fait appel à sa société pour l'aménagement extérieur : pavage d'une cour couverte de 65 m². Le résultat est parfait, son équipe est professionnelle et adorable sur le plan humain. Je suis enchantée de leur travail. Bravo, je recommande à fond.",
   },
   {
-    name: "Thomas & Sophie L.",
-    city: "Uzès",
+    name: "Béatrice",
+    city: "Avril 2025",
     rating: 5,
-    text: "De la conception à la création, tout a été parfait. L'équipe est à l'écoute et le rendu dépasse nos attentes. Notre terrasse est devenue notre pièce préférée.",
-  },
-  {
-    name: "Marc D.",
-    city: "Caissargues",
-    rating: 5,
-    text: "Entretien impeccable de notre propriété depuis deux ans. Ponctuel, professionnel et passionné. Un vrai savoir-faire local que l'on apprécie.",
+    text: "Grand remerciement à l'entreprise d'aménagement extérieur Jean Ba pour son professionnalisme et son sérieux. Outre la compétence des jardiniers qui travaillent rapidement, ils donnent volontiers des conseils et sont à votre écoute. Je recommande vivement ces pros !",
   },
 ];
 

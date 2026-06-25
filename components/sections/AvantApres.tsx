@@ -4,6 +4,17 @@ import BeforeAfter from "@/components/ui/BeforeAfter";
 
 const PAIRS = [
   {
+    title: "Pavage d'une cour couverte — 65 m²",
+    before: {
+      src: "/images/realisations/marina-cour-avant.jpg",
+      alt: "Cour couverte en gravier avant pavage",
+    },
+    after: {
+      src: "/images/realisations/marina-cour-apres.jpg",
+      alt: "Cour couverte pavée après aménagement par Jean Ba",
+    },
+  },
+  {
     title: "Taille d'olivier en nuage",
     before: {
       src: "/images/realisations/olivier-nuage-avant.jpg",
@@ -67,7 +78,7 @@ export default function AvantApres() {
           description="Glissez le curseur sur chaque photo pour découvrir le travail réalisé sur les extérieurs de nos clients dans le Gard."
         />
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-4xl gap-8 sm:grid-cols-2">
           {PAIRS.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.1}>
               <figure>

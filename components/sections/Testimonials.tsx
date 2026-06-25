@@ -109,7 +109,7 @@ export default function Testimonials() {
         </Reveal>
 
         {/* Autres avis */}
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
+        <div className="mx-auto mt-6 grid max-w-4xl gap-6 md:grid-cols-2">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.12}>
               <figure className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-forest/5 bg-white p-8 shadow-soft transition-all duration-500 ease-out-expo hover:-translate-y-1.5 hover:shadow-lift">
