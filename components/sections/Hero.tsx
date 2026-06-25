@@ -61,7 +61,7 @@ export default function Hero() {
         <div className="absolute inset-0 animate-kenburns motion-reduce:animate-none">
           <Image
             src="/images/hero.jpg"
-            alt="Piscine et plage minérale d'un jardin sur-mesure réalisé par Jean Ba Paysagiste à Nîmes"
+            alt="Piscine, terrasse en bois et oliviers sculptés — jardin contemporain réalisé par Jean Ba Paysagiste à Nîmes"
             fill
             priority
             sizes="100vw"
