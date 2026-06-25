@@ -75,8 +75,8 @@ export default function About() {
               </p>
               <p>
                 Conception, création, entretien&nbsp;: un accompagnement complet
-                et un interlocuteur unique pour donner vie à votre jardin
-                d&apos;exception, dans le respect des délais et de votre budget.
+                et un interlocuteur unique pour donner vie à votre jardin, dans
+                le respect des délais et de votre budget.
               </p>
             </div>
           </Reveal>

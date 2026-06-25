@@ -10,7 +10,7 @@
 export const SITE = {
   name: "Jean Ba Paysagiste",
   legalName: "Jean Ba — Jardin & Aménagement Extérieur",
-  tagline: "Créateur de jardins d'exception",
+  tagline: "Créateur de jardins sur-mesure",
   baseline: "Jardin & Aménagement Extérieur",
   services: "Conception · Création · Entretien",
   city: "Nîmes",
@@ -34,9 +34,7 @@ export const SITE = {
   url: "https://jeanba-paysagiste.fr",
   domain: "jeanba-paysagiste.fr",
   socials: {
-    instagram: "https://instagram.com/jeanba_paysagiste",
-    facebook: "https://facebook.com/jeanbapaysagiste",
-    linkedin: "https://linkedin.com/company/jeanba",
+    instagram: "https://www.instagram.com/jeanbajardin",
   },
   // SIRET / forme juridique — à compléter pour les mentions légales
   legal: {
@@ -142,6 +140,27 @@ export type Realisation = {
 
 export const REALISATIONS: Realisation[] = [
   {
+    src: "/images/realisations/virginie-massif.jpg",
+    alt: "Massif de plantes et galets blancs le long d'une clôture en bois dans le Gard",
+    title: "Massif, galets & clôture bois",
+    category: "Création de jardin",
+    span: "wide",
+  },
+  {
+    src: "/images/realisations/virginie-piscine.jpg",
+    alt: "Piscine avec plage en pierre claire et massifs de galets blancs près de Nîmes",
+    title: "Piscine & plage minérale",
+    category: "Piscine & Bassin",
+    span: "tall",
+  },
+  {
+    src: "/images/realisations/virginie-cloture.jpg",
+    alt: "Aménagement de jardin avec gazon synthétique, terrasse et clôture bois dans le Gard",
+    title: "Gazon, terrasse & clôture",
+    category: "Terrasse",
+    span: "wide",
+  },
+  {
     src: "/images/realisations/olivier-nuage-apres.jpg",
     alt: "Olivier taillé en nuage dans un jardin du Gard",
     title: "Taille d'olivier en nuage",
@@ -192,13 +211,37 @@ export type Testimonial = {
   text: string;
 };
 
+/**
+ * Avis client réel mis en avant (avec photos du chantier).
+ */
+export const FEATURED_TESTIMONIAL = {
+  name: "Virginie",
+  date: "Juin 2025",
+  rating: 5,
+  text: "Un grand merci à Jean Ba et son équipe pour l'aménagement de notre jardin. Nous sommes vraiment ravis du résultat, ils ont fait un super travail. Ils sont très professionnels, sérieux et surtout très à l'écoute et de bons conseils. Merci encore, on va enfin pouvoir profiter de notre extérieur ! Nous les recommandons sans hésitation.",
+  images: [
+    {
+      src: "/images/realisations/virginie-piscine.jpg",
+      alt: "Piscine et plage minérale réalisées par Jean Ba pour Virginie",
+    },
+    {
+      src: "/images/realisations/virginie-massif.jpg",
+      alt: "Massif de plantes et galets blancs réalisés par Jean Ba pour Virginie",
+    },
+    {
+      src: "/images/realisations/virginie-cloture.jpg",
+      alt: "Gazon, terrasse et clôture bois réalisés par Jean Ba pour Virginie",
+    },
+  ],
+} as const;
+
 /** ⚠️ TÉMOIGNAGES TYPES — à remplacer par de vrais avis clients. */
 export const TESTIMONIALS: Testimonial[] = [
   {
     name: "Claire M.",
     city: "Nîmes",
     rating: 5,
-    text: "Jean a transformé notre jardin en un véritable havre de paix méditerranéen. Travail soigné, conseils avisés et délais respectés. Nous recommandons sans hésiter.",
+    text: "Jean a transformé notre jardin en un véritable havre de paix. Travail soigné, conseils avisés et délais respectés. Nous recommandons sans hésiter.",
   },
   {
     name: "Thomas & Sophie L.",

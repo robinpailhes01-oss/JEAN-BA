@@ -61,7 +61,7 @@ export default function Hero() {
         <div className="absolute inset-0 animate-kenburns motion-reduce:animate-none">
           <Image
             src="/images/hero.jpg"
-            alt="Olivier taillé en nuage dans un jardin d'exception réalisé par Jean Ba Paysagiste à Nîmes"
+            alt="Olivier taillé en nuage dans un jardin sur-mesure réalisé par Jean Ba Paysagiste à Nîmes"
             fill
             priority
             sizes="100vw"
@@ -121,7 +121,7 @@ export default function Hero() {
                   className="block italic text-leaf-light"
                   style={{ fontVariationSettings: '"SOFT" 60' }}
                 >
-                  d&apos;exception
+                  sur-mesure
                 </motion.span>
               </span>
             </h1>

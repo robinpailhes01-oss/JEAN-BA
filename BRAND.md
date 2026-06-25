@@ -20,9 +20,9 @@
 - `assets/brand/logo-icon-jb.png`   — logo icône rond (monogramme JB, profils & favicon)
 
 ## Identité
-- **Tagline** : « Créateur de jardins d'exception »
+- **Tagline** : « Créateur de jardins sur-mesure »
 - **Services** : Conception • Création • Entretien
-- **Univers** : méditerranéen / Provence (oliviers, cyprès, pierre, piscine, lumière dorée)
+- **Univers** : jardin du Sud / Provence (oliviers, cyprès, pierre, piscine, lumière dorée)
 - **Domaine prévu** : jeanba-paysagiste.fr
 
 ## À compléter (brief en cours)

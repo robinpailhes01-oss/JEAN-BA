@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/lib/constants";
 
 export default function Footer() {
@@ -24,30 +24,13 @@ export default function Footer() {
           <div className="mt-6 flex gap-3">
             <a
               href={SITE.socials.instagram}
-              aria-label="Instagram"
+              aria-label="Instagram de Jean Ba Paysagiste"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-all duration-300 ease-smooth hover:scale-110 hover:border-leaf hover:bg-leaf hover:text-white"
+              className="flex items-center gap-2.5 rounded-full border border-cream/20 px-4 py-2 text-sm transition-all duration-300 ease-smooth hover:border-leaf hover:bg-leaf hover:text-white"
             >
               <Instagram size={18} />
-            </a>
-            <a
-              href={SITE.socials.facebook}
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-all duration-300 ease-smooth hover:scale-110 hover:border-leaf hover:bg-leaf hover:text-white"
-            >
-              <Facebook size={18} />
-            </a>
-            <a
-              href={SITE.socials.linkedin}
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-all duration-300 ease-smooth hover:scale-110 hover:border-leaf hover:bg-leaf hover:text-white"
-            >
-              <Linkedin size={18} />
+              @jeanbajardin
             </a>
           </div>
         </div>

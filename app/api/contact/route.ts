@@ -97,7 +97,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("[contact] Exception:", err);
+    console.error("[contact] Erreur:", err);
     return NextResponse.json(
       { error: "Une erreur est survenue. Réessayez plus tard." },
       { status: 500 },

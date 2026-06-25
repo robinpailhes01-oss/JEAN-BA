@@ -35,7 +35,7 @@ export function localBusinessJsonLd() {
       name,
     })),
     openingHours: "Mo-Sa 08:00-19:00",
-    sameAs: [SITE.socials.instagram, SITE.socials.facebook, SITE.socials.linkedin],
+    sameAs: [SITE.socials.instagram],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Services de paysagisme",
