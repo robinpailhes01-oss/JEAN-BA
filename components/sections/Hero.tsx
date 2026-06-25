@@ -61,17 +61,23 @@ export default function Hero() {
         <div className="absolute inset-0 animate-kenburns motion-reduce:animate-none">
           <Image
             src="/images/hero.jpg"
-            alt="Olivier taillé en nuage dans un jardin sur-mesure réalisé par Jean Ba Paysagiste à Nîmes"
+            alt="Piscine et plage minérale d'un jardin sur-mesure réalisé par Jean Ba Paysagiste à Nîmes"
             fill
             priority
             sizes="100vw"
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/85 via-forest-dark/35 to-forest-dark/55" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_120%,rgba(20,38,8,0.7),transparent_60%)]" />
+        {/* Scrims étagés — lisibilité du texte + profondeur (du sombre en bas
+            vers la lumière en haut), voile sommital pour le header, vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/92 via-forest-dark/45 to-forest-dark/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/55 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_85%_at_50%_45%,transparent_42%,rgba(12,26,5,0.6)_100%)]" />
       </motion.div>
       <div className="grain pointer-events-none absolute inset-0 -z-10" />
+
+      {/* Filet d'encadrement intérieur — touche éditoriale "premium" */}
+      <div className="pointer-events-none absolute inset-3 z-30 rounded-[1.4rem] border border-white/15 sm:inset-5 sm:rounded-[2rem]" />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
