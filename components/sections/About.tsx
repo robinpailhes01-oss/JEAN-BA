@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Leaf, Award, HeartHandshake } from "lucide-react";
 import { SITE, STATS } from "@/lib/constants";
 import Reveal from "@/components/motion/Reveal";
-import Parallax from "@/components/motion/Parallax";
+import RevealImage from "@/components/motion/RevealImage";
 import Button from "@/components/ui/Button";
 import CountUp from "@/components/ui/CountUp";
 
@@ -28,39 +28,40 @@ export default function About() {
   return (
     <section id="a-propos" className="bg-cream py-24 lg:py-32">
       <div className="container-content grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-        {/* Image avec parallax */}
-        <Reveal direction="right">
-          <div className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
-              <Parallax amount={36} className="absolute inset-x-0 -top-[10%] h-[120%]">
-                <Image
-                  src="/images/camion-jean-ba.jpg"
-                  alt={`Le véhicule ${SITE.name} en intervention dans un jardin à ${SITE.city}`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </Parallax>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest-dark/20 to-transparent" />
-            </div>
-            {/* Bloc accent superposé */}
-            <div className="absolute -bottom-6 -right-4 hidden rounded-2xl bg-forest px-7 py-6 text-cream shadow-card sm:block">
-              <p className="font-display text-4xl text-leaf-light">15+</p>
-              <p className="mt-1 text-xs uppercase tracking-widest2 text-cream/80">
-                ans d&apos;expérience
-              </p>
-            </div>
+        {/* Image — dévoilement rideau */}
+        <div className="relative">
+          <RevealImage className="aspect-[4/3] rounded-[2rem] shadow-card">
+            <Image
+              src="/images/camion-jean-ba.jpg"
+              alt={`Le véhicule ${SITE.name} en intervention dans un jardin à ${SITE.city}`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest-dark/25 to-transparent" />
+          </RevealImage>
+          {/* Bloc accent superposé */}
+          <div className="absolute -bottom-6 -right-4 z-10 hidden rounded-2xl bg-forest px-7 py-6 text-cream shadow-card sm:block">
+            <p className="font-display text-4xl text-leaf-light">15+</p>
+            <p className="mt-1 text-xs uppercase tracking-widest2 text-cream/80">
+              ans d&apos;expérience
+            </p>
           </div>
-        </Reveal>
+        </div>
 
         {/* Texte */}
         <div>
           <Reveal>
-            <p className="eyebrow">À propos</p>
+            <p className="flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-widest2 text-leaf-dark">
+              <span className="tnum">(05)</span>
+              <span aria-hidden className="h-px w-6 bg-current opacity-50" />
+              À propos
+            </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mt-4 text-3xl font-medium leading-[1.08] tracking-tight text-forest sm:text-4xl lg:text-[2.75rem]">
-              Un artisan paysagiste passionné, près de chez vous
+            <h2 className="mt-5 text-[2.5rem] font-medium leading-[0.98] tracking-[-0.025em] text-forest sm:text-5xl">
+              Un artisan paysagiste{" "}
+              <span className="accent-italic">passionné</span>, près de chez vous
             </h2>
           </Reveal>
           <Reveal delay={0.16}>

@@ -1,4 +1,4 @@
-import SectionTitle from "@/components/ui/SectionTitle";
+import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/motion/Reveal";
 import BeforeAfter from "@/components/ui/BeforeAfter";
 
@@ -54,14 +54,20 @@ export default function AvantApres() {
       <div className="pointer-events-none absolute -right-20 top-0 h-80 w-80 rounded-full bg-leaf/15 blur-[120px]" />
       <div className="pointer-events-none absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-leaf/10 blur-[120px]" />
       <div className="container-content relative">
-        <SectionTitle
+        <SectionIntro
           light
-          eyebrow="Avant / Après"
-          title="La transformation, en un coup d'œil"
+          index="04"
+          label="Avant / Après"
+          title={
+            <>
+              La transformation,{" "}
+              <span className="accent-italic-light">en un geste</span>
+            </>
+          }
           description="Glissez le curseur sur chaque photo pour découvrir le travail réalisé sur les extérieurs de nos clients dans le Gard."
         />
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {PAIRS.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.1}>
               <figure>

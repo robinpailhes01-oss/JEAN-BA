@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Montserrat } from "next/font/google";
+import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
@@ -11,17 +11,21 @@ import SmoothScroll from "@/components/providers/SmoothScroll";
 import ScrollReset from "@/components/providers/ScrollReset";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 
-const playfair = Playfair_Display({
+// Fraunces — serif "old-style" optique et organique : la signature artisanale.
+// Police variable : on charge la plage de graisses + axes opsz/SOFT.
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-fraunces",
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT"],
 });
 
-const montserrat = Montserrat({
+// Hanken Grotesk — grotesque chaleureux et lisible pour l'UI et le corps.
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-montserrat",
+  variable: "--font-hanken",
   weight: ["300", "400", "500", "600", "700"],
 });
 
@@ -85,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${playfair.variable} ${montserrat.variable}`}>
+    <html lang="fr" className={`${fraunces.variable} ${hanken.variable}`}>
       <body>
         <script
           type="application/ld+json"

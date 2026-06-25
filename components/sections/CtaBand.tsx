@@ -24,8 +24,9 @@ export default function CtaBand() {
 
       <div className="container-content py-24 text-center text-white lg:py-28">
         <Reveal>
-          <h2 className="mx-auto max-w-2xl text-3xl font-medium leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl">
-            Un projet de jardin&nbsp;? Parlons-en.
+          <h2 className="mx-auto max-w-3xl text-[2.7rem] font-medium leading-[0.98] tracking-[-0.025em] sm:text-6xl">
+            Un projet de jardin&nbsp;?{" "}
+            <span className="accent-italic-light">Parlons-en.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.12}>

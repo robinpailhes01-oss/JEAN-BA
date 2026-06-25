@@ -9,16 +9,14 @@ import {
   useReducedMotion,
   type Variants,
 } from "framer-motion";
-import { ArrowRight, Phone, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { SITE } from "@/lib/constants";
-
-const HEADLINE = ["Créateur", "de", "jardins", "d'exception"];
 
 const TRUST = [
   "+15 ans d'expérience",
   "Devis gratuit sous 48 h",
-  "Artisan local · Nîmes & Gard",
+  "Artisan local",
 ];
 
 export default function Hero() {
@@ -29,25 +27,23 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Parallax : l'image descend, le contenu remonte, le tout se fond au défilement
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "22%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "-14%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "20%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "-10%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   const container: Variants = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.09, delayChildren: 0.15 } },
+    visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
   };
-  const item: Variants = {
-    hidden: { opacity: 0, y: reduce ? 0 : 24 },
+  const line: Variants = {
+    hidden: { y: reduce ? 0 : "115%" },
     visible: {
-      opacity: 1,
       y: 0,
-      transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
     },
   };
-  const word: Variants = {
-    hidden: { opacity: 0, y: reduce ? 0 : "110%" },
+  const fade: Variants = {
+    hidden: { opacity: 0, y: reduce ? 0 : 18 },
     visible: {
       opacity: 1,
       y: 0,
@@ -58,7 +54,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex h-[100svh] min-h-[640px] items-center justify-center overflow-hidden"
+      className="relative flex h-[100svh] min-h-[660px] flex-col overflow-hidden text-cream"
     >
       {/* Fond photo — Ken Burns + parallax */}
       <motion.div style={{ y: imageY }} className="absolute inset-0 -z-10">
@@ -72,12 +68,9 @@ export default function Hero() {
             className="object-cover"
           />
         </div>
-        {/* Dégradés étagés : lisibilité du texte + profondeur cinématographique */}
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/70 via-forest-dark/35 to-forest-dark/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(20,38,8,0.55)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/85 via-forest-dark/35 to-forest-dark/55" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_120%,rgba(20,38,8,0.7),transparent_60%)]" />
       </motion.div>
-
-      {/* Grain de film sur toute la scène */}
       <div className="grain pointer-events-none absolute inset-0 -z-10" />
 
       <motion.div
@@ -85,84 +78,104 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="container-content flex flex-col items-center text-center text-white"
+        className="relative flex flex-1 flex-col"
       >
-        {/* Eyebrow */}
-        <motion.p
-          variants={item}
-          className="flex items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream backdrop-blur-sm"
-        >
-          <Sparkles size={13} className="text-leaf-light" />
-          Paysagiste à {SITE.city} · {SITE.department}
-        </motion.p>
-
-        {/* Titre — révélation mot à mot */}
-        <h1 className="mt-7 max-w-4xl text-[2.6rem] font-medium leading-[1.02] tracking-[-0.02em] drop-shadow-[0_2px_24px_rgba(0,0,0,0.35)] sm:text-6xl lg:text-[5rem]">
-          {HEADLINE.map((w, i) => (
-            <span key={i} className="inline-block overflow-hidden align-bottom">
-              <motion.span variants={word} className="inline-block">
-                {w}
-                {i < HEADLINE.length - 1 && " "}
-              </motion.span>
+        {/* Barre méta haute */}
+        <div className="container-content pt-28 lg:pt-32">
+          <motion.div variants={fade} className="hairline-light" />
+          <motion.div
+            variants={fade}
+            className="flex items-center justify-between py-4 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream/80"
+          >
+            <span>Jardin &amp; aménagement extérieur</span>
+            <span className="hidden sm:block">Savoir-faire artisanal</span>
+            <span>
+              {SITE.city} · {SITE.department}
             </span>
-          ))}
-        </h1>
+          </motion.div>
+        </div>
 
-        {/* Sous-titre */}
-        <motion.p
-          variants={item}
-          className="mt-7 max-w-xl text-base leading-relaxed text-cream/90 drop-shadow sm:text-lg"
-        >
-          De la conception à l&apos;entretien, nous dessinons des extérieurs qui
-          vous ressemblent — pensés pour durer, vécus au quotidien.
-        </motion.p>
+        <div className="flex-1" />
 
-        {/* CTAs */}
-        <motion.div
-          variants={item}
-          className="mt-9 flex flex-col gap-3 sm:flex-row"
-        >
-          <Button href="/contact" variant="primary" className="shadow-glow">
-            Demander un devis gratuit
-            <ArrowRight size={18} />
-          </Button>
-          <Button href="/realisations" variant="outline">
-            Voir nos réalisations
-          </Button>
-        </motion.div>
+        {/* Bloc titre éditorial */}
+        <div className="container-content pb-10">
+          <motion.p
+            variants={fade}
+            className="flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-widest2 text-leaf-light"
+          >
+            <span className="tnum">(01)</span>
+            <span aria-hidden className="h-px w-7 bg-leaf-light/60" />
+            Paysagiste créateur
+          </motion.p>
 
-        {/* Bandeau de confiance */}
-        <motion.ul
-          variants={item}
-          className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-cream/80"
-        >
-          {TRUST.map((t, i) => (
-            <li key={t} className="flex items-center gap-6">
-              {i > 0 && (
-                <span aria-hidden className="hidden h-1 w-1 rounded-full bg-leaf-light/70 sm:block" />
-              )}
-              {t}
-            </li>
-          ))}
-        </motion.ul>
+          <div className="mt-6 grid items-end gap-y-9 lg:grid-cols-12 lg:gap-x-10">
+            <h1 className="col-span-8 text-[3.1rem] font-medium leading-[0.9] tracking-[-0.03em] drop-shadow-[0_2px_30px_rgba(0,0,0,0.4)] sm:text-7xl lg:text-[6.3rem]">
+              <span className="block overflow-hidden">
+                <motion.span variants={line} className="block">
+                  Créateur de jardins
+                </motion.span>
+              </span>
+              <span className="block overflow-hidden">
+                <motion.span
+                  variants={line}
+                  className="block italic text-leaf-light"
+                  style={{ fontVariationSettings: '"SOFT" 60' }}
+                >
+                  d&apos;exception
+                </motion.span>
+              </span>
+            </h1>
+
+            <motion.div variants={fade} className="lg:col-span-4 lg:pb-3">
+              <p className="max-w-sm text-base leading-relaxed text-cream/85 sm:text-lg">
+                De la conception à l&apos;entretien, nous dessinons des
+                extérieurs qui vous ressemblent — pensés pour durer.
+              </p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                <Button href="/contact" variant="primary" className="shadow-glow">
+                  Demander un devis
+                  <ArrowRight size={18} />
+                </Button>
+                <Button href="/realisations" variant="outline">
+                  Voir nos réalisations
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Barre méta basse — confiance + scroll */}
+        <div className="container-content pb-7">
+          <motion.div variants={fade} className="hairline-light" />
+          <motion.div
+            variants={fade}
+            className="flex items-center justify-between pt-4"
+          >
+            <ul className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs font-medium text-cream/75">
+              {TRUST.map((t, i) => (
+                <li key={t} className="flex items-center gap-5">
+                  {i > 0 && (
+                    <span
+                      aria-hidden
+                      className="hidden h-1 w-1 rounded-full bg-leaf-light/70 sm:block"
+                    />
+                  )}
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#services"
+              className="group hidden items-center gap-2 text-xs font-semibold uppercase tracking-widest2 text-cream/70 transition-colors hover:text-white sm:flex"
+            >
+              Découvrir
+              <span className="flex h-8 w-5 justify-center rounded-full border border-white/40 pt-1.5">
+                <span className="h-1.5 w-1 animate-float rounded-full bg-leaf-light" />
+              </span>
+            </a>
+          </motion.div>
+        </div>
       </motion.div>
-
-      {/* Appel d'action de défilement */}
-      <motion.a
-        href="#services"
-        aria-label="Découvrir nos services"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 1 }}
-        className="group absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-white/70 transition-colors hover:text-white"
-      >
-        <span className="text-[0.65rem] font-semibold uppercase tracking-widest2">
-          Découvrir
-        </span>
-        <span className="flex h-9 w-5 justify-center rounded-full border border-white/40 pt-1.5">
-          <span className="h-1.5 w-1 animate-float rounded-full bg-leaf-light" />
-        </span>
-      </motion.a>
     </section>
   );
 }

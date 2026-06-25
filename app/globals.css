@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --font-playfair: "Playfair Display", serif;
-    --font-montserrat: "Montserrat", sans-serif;
+    --font-fraunces: "Fraunces", serif;
+    --font-hanken: "Hanken Grotesk", sans-serif;
   }
 
   html {
@@ -31,10 +31,19 @@
   h4 {
     @apply font-display;
     text-wrap: balance;
+    /* Fraunces : un soupçon de SOFT pour la chaleur, optique grand format */
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 30;
+    letter-spacing: -0.02em;
   }
 
   p {
     text-wrap: pretty;
+  }
+
+  /* Chiffres tabulaires alignés pour les compteurs / index */
+  .tnum {
+    font-variant-numeric: tabular-nums;
   }
 
   ::selection {
@@ -75,6 +84,26 @@
   /* Texte en dégradé de verts — accents typographiques */
   .text-gradient-leaf {
     @apply bg-gradient-to-r from-leaf-light via-leaf to-leaf-light bg-clip-text text-transparent;
+  }
+
+  /* Filet éditorial fin — système de rythme du site */
+  .hairline {
+    @apply h-px w-full bg-forest/15;
+  }
+  .hairline-light {
+    @apply h-px w-full bg-cream/20;
+  }
+
+  /* Mot accentué en italique Fraunces — signature typographique */
+  .accent-italic {
+    font-style: italic;
+    font-variation-settings: "SOFT" 60;
+    @apply text-leaf-dark;
+  }
+  .accent-italic-light {
+    font-style: italic;
+    font-variation-settings: "SOFT" 60;
+    @apply text-leaf-light;
   }
 }
 

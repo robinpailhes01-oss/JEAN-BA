@@ -21,14 +21,16 @@ export default function Zone() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
             <Reveal>
-              <p className="eyebrow flex items-center gap-2.5 text-leaf-light">
-                <span aria-hidden className="h-px w-7 bg-leaf-light/60" />
+              <p className="flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-widest2 text-leaf-light">
+                <span className="tnum">(06)</span>
+                <span aria-hidden className="h-px w-6 bg-leaf-light/60" />
                 Zone d&apos;intervention
               </p>
             </Reveal>
             <Reveal delay={0.08}>
-              <h2 className="mt-4 text-3xl font-medium leading-[1.08] tracking-tight sm:text-4xl lg:text-[2.75rem]">
-                À {SITE.city} et dans tout le {SITE.department}
+              <h2 className="mt-5 text-[2.5rem] font-medium leading-[0.98] tracking-[-0.025em] sm:text-5xl">
+                À {SITE.city} et dans{" "}
+                <span className="accent-italic-light">tout le {SITE.department}</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>

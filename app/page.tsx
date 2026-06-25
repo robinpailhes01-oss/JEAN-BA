@@ -1,5 +1,5 @@
 import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
+import Approche from "@/components/sections/Approche";
 import RealisationsPreview from "@/components/sections/RealisationsPreview";
 import AvantApres from "@/components/sections/AvantApres";
 import About from "@/components/sections/About";
@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Services />
+      <Approche />
       <RealisationsPreview />
       <AvantApres />
       <About />
