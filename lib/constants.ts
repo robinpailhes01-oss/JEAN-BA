@@ -110,7 +110,7 @@ export type Stat = { value: number; suffix?: string; label: string };
 export const STATS: Stat[] = [
   { value: 15, suffix: "+", label: "Ans d'expérience" },
   { value: 200, suffix: "+", label: "Jardins réalisés" },
-  { value: 16, suffix: "", label: "Communes desservies" },
+  { value: 20, suffix: "", label: "Communes desservies" },
   { value: 48, suffix: " h", label: "Réponse à votre devis" },
 ];
 
@@ -258,7 +258,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-/** Communes desservies — référencement local (Nîmes et alentours, Gard). */
+/** Communes desservies — référencement local (Gard et Hérault, autour de Nîmes). */
 export const COMMUNES: string[] = [
   "Nîmes",
   "Caissargues",
@@ -276,4 +276,8 @@ export const COMMUNES: string[] = [
   "Générac",
   "Rodilhan",
   "Poulx",
+  "Lunel",
+  "Sommières",
+  "Vauvert",
+  "Marsillargues",
 ];

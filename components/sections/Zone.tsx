@@ -29,8 +29,8 @@ export default function Zone() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-5 text-[2.5rem] font-medium leading-[0.98] tracking-[-0.025em] sm:text-5xl">
-                À {SITE.city} et dans{" "}
-                <span className="accent-italic-light">tout le {SITE.department}</span>
+                À {SITE.city}, dans le {SITE.department} et{" "}
+                <span className="accent-italic-light">l&apos;Hérault</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>

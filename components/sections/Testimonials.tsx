@@ -29,7 +29,7 @@ export default function Testimonials() {
             </div>
             <span className="text-sm font-semibold text-forest">5,0 / 5</span>
             <span className="text-sm text-forest-dark/60">
-              · clients satisfaits dans le Gard
+              · 59 avis Google
             </span>
           </div>
         </Reveal>

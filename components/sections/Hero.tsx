@@ -121,7 +121,7 @@ export default function Hero() {
 
           <div className="mt-5 grid items-end gap-y-8 lg:mt-6 lg:grid-cols-12 lg:gap-x-10">
             <h1 className="col-span-8 text-[2.55rem] font-medium leading-[0.93] tracking-[-0.03em] drop-shadow-[0_2px_40px_rgba(0,0,0,0.65)] sm:text-7xl lg:text-[6.3rem] lg:leading-[0.9]">
-              <span className="block overflow-hidden">
+              <span className="block overflow-hidden pb-[0.08em]">
                 <motion.span variants={line} className="block">
                   Créateur de jardins
                 </motion.span>
