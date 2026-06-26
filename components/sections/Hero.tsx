@@ -86,15 +86,15 @@ export default function Hero() {
         animate="visible"
         className="relative flex flex-1 flex-col"
       >
-        {/* Barre méta haute */}
-        <div className="container-content pt-28 lg:pt-32">
+        {/* Barre méta haute — desktop uniquement (épuré sur mobile) */}
+        <div className="container-content hidden pt-32 lg:block">
           <motion.div variants={fade} className="hairline-light" />
           <motion.div
             variants={fade}
             className="flex items-center justify-between py-4 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream/80"
           >
             <span>Jardin &amp; aménagement extérieur</span>
-            <span className="hidden sm:block">Savoir-faire artisanal</span>
+            <span>Savoir-faire artisanal</span>
             <span>
               {SITE.city} · {SITE.department}
             </span>
@@ -103,25 +103,25 @@ export default function Hero() {
 
         <div className="flex-1" />
 
-        {/* Bloc titre éditorial */}
-        <div className="container-content pb-10">
+        {/* Bloc titre — anchré en bas, dégagé de la barre fixe sur mobile */}
+        <div className="container-content pb-32 lg:pb-10">
           <motion.p
             variants={fade}
-            className="flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-widest2 text-leaf-light"
+            className="flex items-center gap-3 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-leaf-light sm:text-xs"
           >
             <span className="tnum">(01)</span>
             <span aria-hidden className="h-px w-7 bg-leaf-light/60" />
             Paysagiste créateur
           </motion.p>
 
-          <div className="mt-6 grid items-end gap-y-9 lg:grid-cols-12 lg:gap-x-10">
-            <h1 className="col-span-8 text-[3.1rem] font-medium leading-[0.9] tracking-[-0.03em] drop-shadow-[0_2px_30px_rgba(0,0,0,0.4)] sm:text-7xl lg:text-[6.3rem]">
+          <div className="mt-5 grid items-end gap-y-8 lg:mt-6 lg:grid-cols-12 lg:gap-x-10">
+            <h1 className="col-span-8 text-[2.9rem] font-medium leading-[0.92] tracking-[-0.03em] drop-shadow-[0_2px_30px_rgba(0,0,0,0.45)] sm:text-7xl lg:text-[6.3rem] lg:leading-[0.9]">
               <span className="block overflow-hidden">
                 <motion.span variants={line} className="block">
                   Créateur de jardins
                 </motion.span>
               </span>
-              <span className="block overflow-hidden">
+              <span className="block overflow-hidden pb-[0.1em]">
                 <motion.span
                   variants={line}
                   className="block italic text-leaf-light"
@@ -133,25 +133,43 @@ export default function Hero() {
             </h1>
 
             <motion.div variants={fade} className="lg:col-span-4 lg:pb-3">
-              <p className="max-w-sm text-base leading-relaxed text-cream/85 sm:text-lg">
+              <p className="max-w-md text-base leading-relaxed text-cream/90 sm:text-lg">
                 De la conception à l&apos;entretien, nous dessinons des
                 extérieurs qui vous ressemblent — pensés pour durer.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-                <Button href="/contact" variant="primary" className="shadow-glow">
+                {/* Desktop : deux CTA */}
+                <Button
+                  href="/contact"
+                  variant="primary"
+                  className="hidden shadow-glow lg:inline-flex"
+                >
                   Demander un devis
                   <ArrowRight size={18} />
                 </Button>
-                <Button href="/realisations" variant="outline">
+                <Button
+                  href="/realisations"
+                  variant="outline"
+                  className="hidden lg:inline-flex"
+                >
                   Voir nos réalisations
+                </Button>
+                {/* Mobile / tablette : un seul CTA (le devis est dans la barre fixe) */}
+                <Button
+                  href="/realisations"
+                  variant="primary"
+                  className="shadow-glow lg:hidden"
+                >
+                  Voir nos réalisations
+                  <ArrowRight size={18} />
                 </Button>
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Barre méta basse — confiance + scroll */}
-        <div className="container-content pb-7">
+        {/* Barre méta basse — confiance + scroll (desktop uniquement) */}
+        <div className="container-content hidden pb-7 lg:block">
           <motion.div variants={fade} className="hairline-light" />
           <motion.div
             variants={fade}
@@ -163,7 +181,7 @@ export default function Hero() {
                   {i > 0 && (
                     <span
                       aria-hidden
-                      className="hidden h-1 w-1 rounded-full bg-leaf-light/70 sm:block"
+                      className="h-1 w-1 rounded-full bg-leaf-light/70"
                     />
                   )}
                   {t}
@@ -172,7 +190,7 @@ export default function Hero() {
             </ul>
             <a
               href="#services"
-              className="group hidden items-center gap-2 text-xs font-semibold uppercase tracking-widest2 text-cream/70 transition-colors hover:text-white sm:flex"
+              className="group flex items-center gap-2 text-xs font-semibold uppercase tracking-widest2 text-cream/70 transition-colors hover:text-white"
             >
               Découvrir
               <span className="flex h-8 w-5 justify-center rounded-full border border-white/40 pt-1.5">
