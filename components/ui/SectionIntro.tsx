@@ -76,7 +76,7 @@ export default function SectionIntro({
               light ? "text-cream" : "text-forest",
             )}
           >
-            <span className="block overflow-hidden pb-[0.12em]">
+            <span className="block overflow-hidden pb-[0.22em] -mb-[0.22em]">
               <motion.span variants={rise} className="block">
                 {title}
               </motion.span>
