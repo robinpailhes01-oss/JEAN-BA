@@ -66,11 +66,14 @@ export default function Hero() {
             priority
             sizes="100vw"
             className="object-cover"
+            style={{ objectPosition: "center 58%" }}
           />
         </div>
         {/* Scrims ciblés — on assombrit seulement là où il y a du texte (bas
             pour le titre, fine bande haute pour le menu) et on laisse éclater
             le cœur de la photo. Plus lumineux, toujours lisible. */}
+        {/* Voile global léger pour unifier les tons */}
+        <div className="absolute inset-0 bg-forest-dark/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 from-0% via-forest-dark/30 via-[40%] to-transparent to-[68%]" />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/60 from-0% to-transparent to-[28%]" />
         <div className="absolute inset-0 bg-[radial-gradient(125%_90%_at_50%_42%,transparent_55%,rgba(12,26,5,0.38)_100%)]" />
@@ -92,7 +95,7 @@ export default function Hero() {
           <motion.div variants={fade} className="hairline-light" />
           <motion.div
             variants={fade}
-            className="flex items-center justify-between py-4 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]"
+            className="flex items-center justify-between py-4 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream/85 drop-shadow-[0_1px_12px_rgba(0,0,0,0.8)]"
           >
             <span>Jardin &amp; aménagement extérieur</span>
             <span>Savoir-faire artisanal</span>
@@ -108,10 +111,10 @@ export default function Hero() {
         <div className="container-content pb-32 lg:pb-10">
           <motion.p
             variants={fade}
-            className="flex items-center gap-3 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-leaf-light drop-shadow-[0_1px_12px_rgba(0,0,0,0.7)] sm:text-xs"
+            className="flex items-center gap-3 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream/85 drop-shadow-[0_1px_14px_rgba(0,0,0,0.8)] sm:text-xs"
           >
             <span className="tnum">(01)</span>
-            <span aria-hidden className="h-px w-7 bg-leaf-light/60" />
+            <span aria-hidden className="h-px w-7 bg-cream/40" />
             Paysagiste créateur
           </motion.p>
 
