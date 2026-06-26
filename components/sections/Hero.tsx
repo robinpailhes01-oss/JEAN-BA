@@ -68,11 +68,12 @@ export default function Hero() {
             className="object-cover"
           />
         </div>
-        {/* Scrims étagés — lisibilité du texte + profondeur (du sombre en bas
-            vers la lumière en haut), voile sommital pour le header, vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/92 via-forest-dark/45 to-forest-dark/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/55 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(120%_85%_at_50%_45%,transparent_42%,rgba(12,26,5,0.6)_100%)]" />
+        {/* Scrims ciblés — on assombrit seulement là où il y a du texte (bas
+            pour le titre, fine bande haute pour le menu) et on laisse éclater
+            le cœur de la photo. Plus lumineux, toujours lisible. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/90 from-0% via-forest-dark/20 via-[38%] to-transparent to-[65%]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/45 from-0% to-transparent to-[26%]" />
+        <div className="absolute inset-0 bg-[radial-gradient(125%_90%_at_50%_42%,transparent_55%,rgba(12,26,5,0.38)_100%)]" />
       </motion.div>
       <div className="grain pointer-events-none absolute inset-0 -z-10" />
 
