@@ -65,8 +65,7 @@ export default function Hero() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: "center 58%" }}
+            className="object-cover [object-position:30%_75%] lg:[object-position:center_58%]"
           />
         </div>
         {/* Scrims ciblés — on assombrit seulement là où il y a du texte (bas
@@ -77,6 +76,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 from-0% via-forest-dark/30 via-[40%] to-transparent to-[68%]" />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/60 from-0% to-transparent to-[28%]" />
         <div className="absolute inset-0 bg-[radial-gradient(125%_90%_at_50%_42%,transparent_55%,rgba(12,26,5,0.38)_100%)]" />
+        {/* Vignette centrale mobile — assombrit la zone de l'eyebrow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[28%] via-forest-dark/30 via-[52%] to-transparent to-[72%] lg:hidden" />
       </motion.div>
       <div className="grain pointer-events-none absolute inset-0 -z-10" />
 
@@ -108,7 +109,7 @@ export default function Hero() {
         <div className="flex-1" />
 
         {/* Bloc titre — anchré en bas, dégagé de la barre fixe sur mobile */}
-        <div className="container-content pb-32 lg:pb-10">
+        <div className="container-content pb-28 lg:pb-10">
           <motion.p
             variants={fade}
             className="flex items-center gap-3 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream/85 drop-shadow-[0_1px_14px_rgba(0,0,0,0.8)] sm:text-xs"
@@ -119,7 +120,7 @@ export default function Hero() {
           </motion.p>
 
           <div className="mt-5 grid items-end gap-y-8 lg:mt-6 lg:grid-cols-12 lg:gap-x-10">
-            <h1 className="col-span-8 text-[2.9rem] font-medium leading-[0.92] tracking-[-0.03em] drop-shadow-[0_2px_40px_rgba(0,0,0,0.65)] sm:text-7xl lg:text-[6.3rem] lg:leading-[0.9]">
+            <h1 className="col-span-8 text-[2.55rem] font-medium leading-[0.93] tracking-[-0.03em] drop-shadow-[0_2px_40px_rgba(0,0,0,0.65)] sm:text-7xl lg:text-[6.3rem] lg:leading-[0.9]">
               <span className="block overflow-hidden">
                 <motion.span variants={line} className="block">
                   Créateur de jardins
