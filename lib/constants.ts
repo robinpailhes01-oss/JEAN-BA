@@ -18,8 +18,8 @@ export const SITE = {
   departmentCode: "30",
   region: "Occitanie",
   // ⚠️ PLACEHOLDERS — à remplacer avant mise en ligne
-  phone: "07 00 00 00 00",
-  phoneHref: "+33700000000",
+  phone: "06 15 53 84 83",
+  phoneHref: "+33615538483",
   email: "contact@jeanba-paysagiste.fr",
   // Adresse (siège) — pour mentions légales & schema. À compléter.
   address: {

@@ -71,8 +71,8 @@ export default function Hero() {
         {/* Scrims ciblés — on assombrit seulement là où il y a du texte (bas
             pour le titre, fine bande haute pour le menu) et on laisse éclater
             le cœur de la photo. Plus lumineux, toujours lisible. */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/90 from-0% via-forest-dark/20 via-[38%] to-transparent to-[65%]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/45 from-0% to-transparent to-[26%]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 from-0% via-forest-dark/30 via-[40%] to-transparent to-[68%]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/60 from-0% to-transparent to-[28%]" />
         <div className="absolute inset-0 bg-[radial-gradient(125%_90%_at_50%_42%,transparent_55%,rgba(12,26,5,0.38)_100%)]" />
       </motion.div>
       <div className="grain pointer-events-none absolute inset-0 -z-10" />
@@ -92,7 +92,7 @@ export default function Hero() {
           <motion.div variants={fade} className="hairline-light" />
           <motion.div
             variants={fade}
-            className="flex items-center justify-between py-4 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream/80"
+            className="flex items-center justify-between py-4 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-cream/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]"
           >
             <span>Jardin &amp; aménagement extérieur</span>
             <span>Savoir-faire artisanal</span>
@@ -108,7 +108,7 @@ export default function Hero() {
         <div className="container-content pb-32 lg:pb-10">
           <motion.p
             variants={fade}
-            className="flex items-center gap-3 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-leaf-light sm:text-xs"
+            className="flex items-center gap-3 font-sans text-[0.7rem] font-semibold uppercase tracking-widest2 text-leaf-light drop-shadow-[0_1px_12px_rgba(0,0,0,0.7)] sm:text-xs"
           >
             <span className="tnum">(01)</span>
             <span aria-hidden className="h-px w-7 bg-leaf-light/60" />
@@ -116,7 +116,7 @@ export default function Hero() {
           </motion.p>
 
           <div className="mt-5 grid items-end gap-y-8 lg:mt-6 lg:grid-cols-12 lg:gap-x-10">
-            <h1 className="col-span-8 text-[2.9rem] font-medium leading-[0.92] tracking-[-0.03em] drop-shadow-[0_2px_30px_rgba(0,0,0,0.45)] sm:text-7xl lg:text-[6.3rem] lg:leading-[0.9]">
+            <h1 className="col-span-8 text-[2.9rem] font-medium leading-[0.92] tracking-[-0.03em] drop-shadow-[0_2px_40px_rgba(0,0,0,0.65)] sm:text-7xl lg:text-[6.3rem] lg:leading-[0.9]">
               <span className="block overflow-hidden">
                 <motion.span variants={line} className="block">
                   Créateur de jardins
@@ -134,7 +134,7 @@ export default function Hero() {
             </h1>
 
             <motion.div variants={fade} className="lg:col-span-4 lg:pb-3">
-              <p className="max-w-md text-base leading-relaxed text-cream/90 sm:text-lg">
+              <p className="max-w-md text-base leading-relaxed text-cream drop-shadow-[0_1px_12px_rgba(0,0,0,0.5)] sm:text-lg">
                 De la conception à l&apos;entretien, nous dessinons des
                 extérieurs qui vous ressemblent — pensés pour durer.
               </p>
