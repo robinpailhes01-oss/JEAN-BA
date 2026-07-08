@@ -20,7 +20,7 @@ export const SITE = {
   // ⚠️ PLACEHOLDERS — à remplacer avant mise en ligne
   phone: "06 15 53 84 83",
   phoneHref: "+33615538483",
-  email: "contact@jeanba-paysagiste.fr",
+  email: "contact@jeanba-jardin.fr",
   // Adresse (siège) — pour mentions légales & schema. À compléter.
   address: {
     street: "—",
@@ -31,8 +31,8 @@ export const SITE = {
   // Coordonnées GPS approx. de Nîmes (pour la carte). À ajuster sur l'adresse réelle.
   geo: { lat: 43.8367, lng: 4.3601 },
   hours: "Du lundi au samedi, 8h – 19h",
-  url: "https://jeanba-paysagiste.fr",
-  domain: "jeanba-paysagiste.fr",
+  url: "https://jeanba-jardin.fr",
+  domain: "jeanba-jardin.fr",
   socials: {
     instagram: "https://www.instagram.com/jeanbajardin",
   },
