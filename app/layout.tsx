@@ -3,7 +3,7 @@ import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
-import { localBusinessJsonLd } from "@/lib/seo";
+import { localBusinessJsonLd, faqJsonLd } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileCta from "@/components/layout/MobileCta";
@@ -43,6 +43,12 @@ export const metadata: Metadata = {
     "entretien jardin Nîmes",
     "paysagiste Gard",
     "aménagement extérieur Nîmes",
+    "paysagiste Hérault",
+    "paysagiste Lunel",
+    "entretien jardin Hérault",
+    "création jardin Montpellier",
+    "aménagement extérieur Gard Hérault",
+    "devis paysagiste gratuit Nîmes",
   ],
   authors: [{ name: SITE.name }],
   creator: SITE.name,
@@ -95,6 +101,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessJsonLd()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd()),
           }}
         />
         <ScrollProgress />

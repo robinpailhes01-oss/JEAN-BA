@@ -1,5 +1,14 @@
 import type { MetadataRoute } from "next";
-import { SITE } from "@/lib/constants";
+import { SITE, COMMUNES } from "@/lib/constants";
+
+function slugify(s: string) {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -17,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.8,
     },
+    ...COMMUNES.map((c) => ({
+      url: `${SITE.url}/zones/${slugify(c)}`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    })),
     {
       url: `${SITE.url}/mentions-legales`,
       lastModified: now,
