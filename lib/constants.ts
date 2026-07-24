@@ -21,11 +21,11 @@ export const SITE = {
   phone: "06 15 53 84 83",
   phoneHref: "+33615538483",
   email: "contact@jeanba-jardin.fr",
-  // Adresse (siège) — pour mentions légales & schema. À compléter.
+  // Adresse (siège) — pour mentions légales & schema.
   address: {
-    street: "—",
-    postalCode: "30000",
-    city: "Nîmes",
+    street: "Passage des Vendangeurs",
+    postalCode: "30660",
+    city: "Gallargues-le-Montueux",
     country: "France",
   },
   // Coordonnées GPS approx. de Nîmes (pour la carte). À ajuster sur l'adresse réelle.
@@ -36,11 +36,11 @@ export const SITE = {
   socials: {
     instagram: "https://www.instagram.com/jeanbajardin",
   },
-  // SIRET / forme juridique — à compléter pour les mentions légales
+  // SIRET / forme juridique — pour les mentions légales
   legal: {
-    status: "Entreprise individuelle", // TODO à confirmer
-    siret: "TODO — n° SIRET",
-    director: "Jean Ba",
+    status: "SAS",
+    siret: "931 563 035 00019",
+    director: "Paul Jean-Baptiste",
   },
 } as const;
 
@@ -72,34 +72,35 @@ export const SERVICES: Service[] = [
     features: [
       "Visite et analyse du terrain",
       "Plan d'aménagement personnalisé",
+      "Possibilité de créer des projections 3D de votre projet",
       "Sélection raisonnée des végétaux",
-      "Devis détaillé et transparent",
+      "Devis détaillé, transparent et personnalisé",
     ],
   },
   {
     slug: "creation",
     title: "Création",
-    short: "Donner vie au projet",
+    short: "Donnez vie à votre projet d'aménagement avec le plus grand soin.",
     description:
-      "De la première plantation aux ouvrages paysagers, nous façonnons l'intégralité de votre extérieur avec un soin d'artisan : massifs, allées, terrasses, gazon et arrosage automatique.",
+      "De la première plantation aux ouvrages paysagers, nous façonnons l'intégralité de votre extérieur : massifs, allées, terrasses, gazon et arrosage automatique.",
     features: [
-      "Création de massifs et plantations",
-      "Terrasses, allées & pas japonais",
-      "Engazonnement et gazon synthétique",
-      "Arrosage automatique intégré",
+      "Création de massifs paysagers",
+      "Terrasses sur plots et allées",
+      "Pose de gazon naturel et synthétique",
+      "Installation d'un arrosage automatique intégré et en goutte-à-goutte",
     ],
   },
   {
     slug: "entretien",
     title: "Entretien",
-    short: "Préserver sa beauté, saison après saison",
+    short: "Maintenir sa beauté",
     description:
-      "Un beau jardin se cultive dans la durée. Contrats annuels ou interventions ponctuelles : taille, tonte, élagage et soin des végétaux pour garder un extérieur impeccable toute l'année.",
+      "Un beau jardin se cultive dans la durée. Contrats d'entretien ou interventions ponctuelles : taille, tonte et soin des végétaux pour garder un extérieur impeccable toute l'année.",
     features: [
-      "Taille et élagage raisonnés",
+      "Taille raisonnée",
       "Tonte et entretien des gazons",
-      "Désherbage et soin des massifs",
-      "Contrats annuels sur mesure",
+      "Désherbage manuel ou thermique et soin des massifs paysagers",
+      "Contrats d'entretien sur mesure",
     ],
   },
 ];
@@ -149,7 +150,7 @@ export const REALISATIONS: Realisation[] = [
   {
     src: "/images/realisations/virginie-piscine.jpg",
     alt: "Piscine avec plage en pierre claire et massifs de galets blancs près de Nîmes",
-    title: "Piscine & plage minérale",
+    title: "Pose de margelles et création de terrasse sur plots en travertin",
     category: "Piscine & Bassin",
     span: "tall",
   },

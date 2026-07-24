@@ -10,7 +10,7 @@ const VALUES = [
   {
     icon: Leaf,
     title: "Savoir-faire local",
-    text: "Une parfaite connaissance des végétaux et du climat du Gard.",
+    text: "Une parfaite connaissance des végétaux et de notre climat méditerranéen.",
   },
   {
     icon: Award,
@@ -20,7 +20,7 @@ const VALUES = [
   {
     icon: HeartHandshake,
     title: "Proximité & écoute",
-    text: "Un interlocuteur unique, à votre écoute du devis jusqu'au suivi.",
+    text: "Un interlocuteur unique, à votre écoute de la prise de devis à la réception du chantier.",
   },
 ];
 
@@ -67,11 +67,12 @@ export default function About() {
           <Reveal delay={0.16}>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-forest-dark/75">
               <p>
-                Installé à {SITE.city}, Jean Ba met son savoir-faire et sa
-                passion du végétal au service de vos projets d&apos;extérieur.
-                De la petite terrasse au grand jardin, chaque réalisation est
-                pensée comme un lieu de vie unique, en harmonie avec son
-                environnement.
+                Installés à {SITE.city}, nous intervenons dans le{" "}
+                {SITE.department} et l&apos;Hérault, et mettons notre
+                savoir-faire et notre passion du végétal au service de vos
+                projets d&apos;aménagement extérieur. De la petite terrasse au
+                grand jardin, chaque réalisation est pensée comme un lieu de
+                vie unique, en harmonie avec son environnement.
               </p>
               <p>
                 Conception, création, entretien&nbsp;: un accompagnement complet

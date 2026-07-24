@@ -32,10 +32,6 @@ export default function MentionsLegalesPage() {
               <br />
               E-mail&nbsp;: {SITE.email}
             </p>
-            <p className="text-sm italic text-forest-dark/50">
-              ⚠️ Informations à compléter (SIRET, forme juridique, adresse)
-              avant la mise en ligne.
-            </p>
           </Section>
 
           <Section title="Hébergement">

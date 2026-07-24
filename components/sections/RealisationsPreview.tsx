@@ -30,7 +30,7 @@ export default function RealisationsPreview() {
               <span className="accent-italic">d&apos;eux-mêmes</span>
             </>
           }
-          description="Chaque jardin est unique. Un aperçu de nos créations dans le Gard, pensées pour durer et sublimer votre lieu de vie."
+          description="Chaque jardin est unique. Un aperçu de nos créations dans le Gard et l'Hérault, pensées pour durer et sublimer votre lieu de vie."
         />
 
         <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-12">
