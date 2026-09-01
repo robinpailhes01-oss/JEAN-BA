@@ -111,7 +111,7 @@ export type Stat = { value: number; suffix?: string; label: string };
 export const STATS: Stat[] = [
   { value: 15, suffix: "+", label: "Ans d'expérience" },
   { value: 200, suffix: "+", label: "Jardins réalisés" },
-  { value: 20, suffix: "", label: "Communes desservies" },
+  { value: 18, suffix: "", label: "Communes desservies" },
   { value: 48, suffix: " h", label: "Réponse à votre devis" },
 ];
 
@@ -259,26 +259,24 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-/** Communes desservies — référencement local (Gard et Hérault, autour de Nîmes). */
+/** Communes desservies — référencement local (autour de Lunel, entre Gard et Hérault). */
 export const COMMUNES: string[] = [
-  "Nîmes",
-  "Caissargues",
-  "Marguerittes",
-  "Bouillargues",
-  "Milhaud",
-  "Saint-Gilles",
-  "Garons",
-  "Manduel",
-  "Bezouce",
-  "Redessan",
-  "Uzès",
-  "Beaucaire",
-  "Bernis",
-  "Générac",
-  "Rodilhan",
-  "Poulx",
-  "Lunel",
+  "Aimargues",
+  "Aubais",
+  "Gallargues-le-Montueux",
+  "Lunel-Viel",
+  "Calvisson",
+  "Villetelle",
+  "Aigues-Vives",
+  "Mus",
   "Sommières",
+  "La Grande-Motte",
+  "Mauguio",
+  "Castries",
+  "Vendargues",
+  "Uchaud",
   "Vauvert",
   "Marsillargues",
+  "Saint-Laurent-d'Aigouze",
+  "Saint-Just",
 ];

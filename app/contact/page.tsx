@@ -26,7 +26,7 @@ const INFOS = [
   {
     icon: MapPin,
     label: "Zone d'intervention",
-    value: `${SITE.city}, le ${SITE.department} et l'Hérault — entre Montpellier et Nîmes`,
+    value: `${SITE.city}, le ${SITE.department} et l'Hérault, entre Montpellier et Nîmes`,
   },
   {
     icon: Clock,
