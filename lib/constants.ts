@@ -21,6 +21,8 @@ export const SITE = {
   phone: "06 15 53 84 83",
   phoneHref: "+33615538483",
   email: "contact@jeanba-jardin.fr",
+  // Destinataires des demandes de devis (boîte pro + boîte perso du gérant).
+  leadRecipients: ["contact@jeanba-jardin.fr", "jeanbajardinier@laposte.net"],
   // Adresse (siège) — pour mentions légales & schema.
   address: {
     street: "Passage des Vendangeurs",

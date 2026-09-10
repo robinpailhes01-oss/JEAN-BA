@@ -48,8 +48,14 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  // Destinataire des leads (à définir dans .env). Fallback sur l'email du site.
-  const to = process.env.CONTACT_TO_EMAIL || SITE.email;
+  // Destinataires des leads : boîte pro + boîte perso du gérant (constants),
+  // plus d'éventuelles adresses supplémentaires via CONTACT_TO_EMAIL
+  // (séparées par des virgules). Doublons ignorés.
+  const extra = (process.env.CONTACT_TO_EMAIL || "")
+    .split(",")
+    .map((e) => e.trim())
+    .filter(Boolean);
+  const to = Array.from(new Set([...SITE.leadRecipients, ...extra]));
   const from = process.env.CONTACT_FROM_EMAIL || `Jean Ba Paysagiste <contact@${SITE.domain}>`;
 
   const html = `
