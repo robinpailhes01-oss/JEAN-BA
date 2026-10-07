@@ -11,7 +11,11 @@ import {
 } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
-import HeroVideo from "@/components/sections/HeroVideo";
+import {
+  HeroVideo,
+  HeroVideoPlay,
+  useHeroVideo,
+} from "@/components/sections/HeroVideo";
 import { SITE } from "@/lib/constants";
 
 const TRUST = [
@@ -23,6 +27,7 @@ const TRUST = [
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
+  const heroVideo = useHeroVideo();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -70,7 +75,7 @@ export default function Hero() {
           />
         </div>
         {/* Vidéo de chantier en fond, par-dessus la photo (qui reste le repli) */}
-        <HeroVideo />
+        <HeroVideo controller={heroVideo} />
         {/* Scrims ciblés — on assombrit seulement là où il y a du texte (bas
             pour le titre, fine bande haute pour le menu) et on laisse éclater
             le cœur de la photo. Plus lumineux, toujours lisible. */}
@@ -88,6 +93,9 @@ export default function Hero() {
 
       {/* Filet d'encadrement intérieur — touche éditoriale "premium" */}
       <div className="pointer-events-none absolute inset-3 z-30 rounded-[1.4rem] border border-white/15 sm:inset-5 sm:rounded-[2rem]" />
+
+      {/* Bouton de secours si le navigateur bloque la lecture automatique */}
+      <HeroVideoPlay controller={heroVideo} />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
