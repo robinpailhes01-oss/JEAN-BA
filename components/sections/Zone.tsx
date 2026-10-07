@@ -2,7 +2,7 @@ import { MapPin } from "lucide-react";
 import { SITE, COMMUNES } from "@/lib/constants";
 import Reveal from "@/components/motion/Reveal";
 
-export default function Zone() {
+export default function Zone({ index = "06" }: { index?: string }) {
   return (
     <section className="grain relative overflow-hidden bg-forest py-24 text-cream lg:py-28">
       {/* Motif décoratif subtil */}
@@ -22,7 +22,7 @@ export default function Zone() {
           <div>
             <Reveal>
               <p className="flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-widest2 text-leaf-light">
-                <span className="tnum">(06)</span>
+                <span className="tnum">({index})</span>
                 <span aria-hidden className="h-px w-6 bg-leaf-light/60" />
                 Zone d&apos;intervention
               </p>

@@ -49,7 +49,7 @@ const PAIRS = [
   },
 ];
 
-export default function AvantApres() {
+export default function AvantApres({ index = "04" }: { index?: string }) {
   return (
     <section className="grain relative overflow-hidden bg-forest py-24 text-cream lg:py-32">
       {/* Motif décoratif subtil */}
@@ -67,7 +67,7 @@ export default function AvantApres() {
       <div className="container-content relative">
         <SectionIntro
           light
-          index="04"
+          index={index}
           label="Avant / Après"
           title={
             <>

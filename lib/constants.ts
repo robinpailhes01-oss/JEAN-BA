@@ -261,6 +261,21 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
+/**
+ * Vidéo de la page d'accueil.
+ * Le fichier doit être placé dans /public/videos/ (mp4 H.264, 1080p max,
+ * idéalement moins de 25 Mo). Tant qu'il est absent, la section n'est pas affichée.
+ */
+export const HOME_VIDEO = {
+  src: "/videos/jean-ba-aimargues.mp4",
+  label: "Sur le terrain",
+  title: "Jean Ba,",
+  titleAccent: "au travail",
+  description:
+    "Un aperçu de notre façon de travailler, au plus près du terrain, dans le Gard et l'Hérault.",
+  ariaLabel: "Vidéo de présentation du travail de Jean Ba Paysagiste",
+} as const;
+
 /** Communes desservies — référencement local (autour de Lunel, entre Gard et Hérault). */
 export const COMMUNES: string[] = [
   "Aimargues",

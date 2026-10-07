@@ -4,12 +4,12 @@ import { TESTIMONIALS, FEATURED_TESTIMONIAL as F } from "@/lib/constants";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/motion/Reveal";
 
-export default function Testimonials() {
+export default function Testimonials({ index = "07" }: { index?: string }) {
   return (
     <section className="bg-beige py-24 lg:py-32">
       <div className="container-content">
         <SectionIntro
-          index="07"
+          index={index}
           label="Témoignages"
           title={
             <>

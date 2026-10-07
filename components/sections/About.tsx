@@ -24,7 +24,7 @@ const VALUES = [
   },
 ];
 
-export default function About() {
+export default function About({ index = "05" }: { index?: string }) {
   return (
     <section id="a-propos" className="bg-cream py-24 lg:py-32">
       <div className="container-content grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
@@ -53,7 +53,7 @@ export default function About() {
         <div>
           <Reveal>
             <p className="flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-widest2 text-leaf-dark">
-              <span className="tnum">(05)</span>
+              <span className="tnum">({index})</span>
               <span aria-hidden className="h-px w-6 bg-current opacity-50" />
               À propos
             </p>
