@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
+import HeroVideo from "@/components/sections/HeroVideo";
 import { SITE } from "@/lib/constants";
 
 const TRUST = [
@@ -68,6 +69,8 @@ export default function Hero() {
             className="object-cover [object-position:30%_75%] lg:[object-position:center_58%]"
           />
         </div>
+        {/* Vidéo de chantier en fond, par-dessus la photo (qui reste le repli) */}
+        <HeroVideo />
         {/* Scrims ciblés — on assombrit seulement là où il y a du texte (bas
             pour le titre, fine bande haute pour le menu) et on laisse éclater
             le cœur de la photo. Plus lumineux, toujours lisible. */}
@@ -76,6 +79,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 from-0% via-forest-dark/30 via-[40%] to-transparent to-[68%]" />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/60 from-0% to-transparent to-[28%]" />
         <div className="absolute inset-0 bg-[radial-gradient(125%_90%_at_50%_42%,transparent_55%,rgba(12,26,5,0.38)_100%)]" />
+        {/* Coin bas droit assombri : estompe le filigrane incrusté dans la vidéo */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(12,26,5,0.95)_0%,rgba(12,26,5,0.8)_14%,transparent_30%)]" />
         {/* Vignette centrale mobile — assombrit la zone de l'eyebrow */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[28%] via-forest-dark/30 via-[52%] to-transparent to-[72%] lg:hidden" />
       </motion.div>

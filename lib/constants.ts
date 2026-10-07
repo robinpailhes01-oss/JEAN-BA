@@ -262,6 +262,16 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 /**
+ * Vidéo de fond du haut de page d'accueil : muette, en boucle, sans générique.
+ * Deux versions pour ne pas alourdir le mobile. Placer les fichiers dans /public/videos/.
+ * Si l'utilisateur réduit les animations ou économise ses données, la photo reste affichée.
+ */
+export const HERO_VIDEO = {
+  desktop: "/videos/hero-1080.mp4",
+  mobile: "/videos/hero-720.mp4",
+} as const;
+
+/**
  * Vidéo de la page d'accueil.
  * Le fichier doit être placé dans /public/videos/ (mp4 H.264, 1080p max,
  * idéalement moins de 25 Mo). Tant qu'il est absent, la section n'est pas affichée.
