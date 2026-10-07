@@ -268,12 +268,14 @@ export const TESTIMONIALS: Testimonial[] = [
  */
 export const HOME_VIDEO = {
   src: "/videos/jean-ba-aimargues.mp4",
+  poster: "/videos/jean-ba-aimargues-poster.jpg",
   label: "Sur le terrain",
   title: "Jean Ba,",
   titleAccent: "au travail",
   description:
-    "Un aperçu de notre façon de travailler, au plus près du terrain, dans le Gard et l'Hérault.",
-  ariaLabel: "Vidéo de présentation du travail de Jean Ba Paysagiste",
+    "Un chantier à Aimargues, de la préparation à la finition : une terrasse sur plots autour d'une piscine.",
+  ariaLabel:
+    "Vidéo d'un chantier de terrasse sur plots autour d'une piscine, réalisé par Jean Ba Paysagiste",
 } as const;
 
 /** Communes desservies — référencement local (autour de Lunel, entre Gard et Hérault). */

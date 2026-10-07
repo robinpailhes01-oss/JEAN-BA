@@ -28,9 +28,9 @@ export default function VideoShowcase({ index = "04" }: { index?: string }) {
         />
 
         <Reveal className="mt-14 flex justify-center">
-          {/* #t=0.1 : force l'affichage de la première image sur iOS */}
           <video
-            src={`${HOME_VIDEO.src}#t=0.1`}
+            src={HOME_VIDEO.src}
+            poster={HOME_VIDEO.poster}
             aria-label={HOME_VIDEO.ariaLabel}
             controls
             playsInline
